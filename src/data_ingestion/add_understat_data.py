@@ -4,6 +4,7 @@ import pandas as pd
 from understat import Understat
 from thefuzz import fuzz
 from collections import defaultdict
+import os
 
 # --- Team Name Normalization ---
 TEAM_NAME_MAPPINGS = {
@@ -77,15 +78,37 @@ def to_int(value, default=0):
         return default
 
 
+async def get_2024_25_premier_league_player_ids(understat_client):
+    """Fetches all player IDs for the 2024-25 EPL season."""
+    print("Fetching player list for the 2024-25 season to use as a filter...")
+    player_ids = set()
+    try:
+        league_players_2024 = await understat_client.get_league_players(
+            league_name="epl", season=2024
+        )
+        for player in league_players_2024:
+            player_id = player.get('id')
+            if player_id:
+                player_ids.add(int(player_id))
+        print(f"Found {len(player_ids)} unique players in the 2024-25 Premier League season.")
+    except Exception as e:
+        print(f"Could not fetch 2024-25 player data: {e}. No player filtering will be applied.")
+    return player_ids
+
+
 async def main():
     start_year = 2016
     end_year = 2023
     all_player_rows = []
     appended_rows_count = 0
 
-    reference_csv_path = "cleaned_merged_seasons_team_aggregated.csv"
-    # Stores reference game contexts: {(season_f, date_f): set((normalized_ref_opponent, ref_was_home, ref_gw)), ...}
-    # This set stores unique opponent contexts for a given date and season from your reference.
+    # --- UPDATED FILE PATH ---
+    # Construct the path relative to the script's location
+    script_dir = os.path.dirname(__file__)
+    cleaned_data_dir = os.path.abspath(os.path.join(script_dir, "../../../data/cleaned"))
+
+    reference_csv_path = os.path.join(cleaned_data_dir, "cleaned_merged_seasons_team_aggregated.csv")
+
     reference_game_contexts = defaultdict(set)
     fpl_player_name_to_id_lookup = {}
 
@@ -95,7 +118,7 @@ async def main():
             '%Y-%m-%d')
 
         required_ref_cols = ['season_x', 'kickoff_time_date_only',
-                             'opp_team_name', 'was_home',  # Crucial for new logic
+                             'opp_team_name', 'was_home',
                              'GW', 'name', 'element']
 
         missing_cols = [col for col in required_ref_cols if col not in gw_reference_df.columns]
@@ -108,28 +131,21 @@ async def main():
             ref_season = str(row['season_x'])
             ref_date = str(row['kickoff_time_date_only'])
             ref_gw = row['GW']
-
             ref_opponent_name = normalize_team_name(str(row['opp_team_name']))
-
             if pd.isna(row['was_home']):
                 continue
-
             ref_was_home = False
             if isinstance(row['was_home'], bool):
                 ref_was_home = row['was_home']
             elif isinstance(row['was_home'], str):
                 ref_was_home = row['was_home'].lower() == 'true'
-
-            if ref_opponent_name:  # Ensure opponent name is not empty
+            if ref_opponent_name:
                 reference_game_contexts[(ref_season, ref_date)].add(
                     (ref_opponent_name, ref_was_home, ref_gw)
                 )
-
             fpl_player_name_norm = str(row['name']).lower().strip()
             fpl_element_id = row['element']
-            # FPL ID lookup can still be based on player name and season from reference
             fpl_player_name_to_id_lookup[(ref_season, fpl_player_name_norm)] = fpl_element_id
-
         print(f"Successfully built reference game contexts and FPL player lookups from {reference_csv_path}.")
 
     except FileNotFoundError:
@@ -142,6 +158,10 @@ async def main():
     try:
         async with aiohttp.ClientSession() as session:
             understat_client = Understat(session)
+
+            players_in_2024_season_ids = await get_2024_25_premier_league_player_ids(understat_client)
+            if not players_in_2024_season_ids:
+                print("Warning: Could not get 2024-25 player list. The output will not be filtered.")
 
             for year in range(start_year, end_year + 1):
                 season_formatted = f"{year}-{(year + 1) % 100:02d}"
@@ -168,8 +188,13 @@ async def main():
                     if not player_id_str or not player_name_understat:
                         continue
 
-                    print(f"  Processing Understat player: {player_name_understat} (ID: {player_id_str})")
                     player_id = int(player_id_str)
+
+                    if players_in_2024_season_ids and player_id not in players_in_2024_season_ids:
+                        # Skip this player if they are not in the 2024-25 season
+                        continue
+
+                    print(f"  Processing Understat player: {player_name_understat} (ID: {player_id_str})")
 
                     normalized_understat_name_for_fpl = player_name_understat.lower().strip()
                     calculated_fpl_id = -1
@@ -181,6 +206,7 @@ async def main():
                         print(
                             f"[MATCHED] Exact match found: '{normalized_understat_name_for_fpl}' for season {season_formatted}.")
                     else:
+                        best_fuzz_name = "N/A"
                         for (s_key, fpl_name_key), fpl_id_val in fpl_player_name_to_id_lookup.items():
                             if s_key == season_formatted:
                                 score = fuzz.token_set_ratio(normalized_understat_name_for_fpl, fpl_name_key)
@@ -195,6 +221,7 @@ async def main():
                         else:
                             print(
                                 f"[NO MATCH] Could not match '{normalized_understat_name_for_fpl}' in season {season_formatted}. Best score was {best_fuzz_score_fpl} against '{best_fuzz_name}'.")
+
                     all_matches_for_player_raw_understat = []
                     try:
                         all_matches_for_player_raw_understat = await understat_client.get_player_matches(
@@ -217,7 +244,6 @@ async def main():
                             else:
                                 continue
 
-                                # Get all reference game contexts for this specific date and season
                         relevant_ref_contexts = reference_game_contexts.get(
                             (season_formatted, understat_match_date_only), set())
 
@@ -234,15 +260,15 @@ async def main():
 
                             for norm_ref_opponent, ref_was_home_val, ref_gw_val in relevant_ref_contexts:
                                 opponent_match_score = 0
-                                if ref_was_home_val:  # Player's team (from ref) was home, so ref_opponent is the away team
+                                if ref_was_home_val:
                                     opponent_match_score = fuzz.token_set_ratio(norm_understat_a, norm_ref_opponent)
-                                else:  # Player's team (from ref) was away, so ref_opponent is the home team
+                                else:
                                     opponent_match_score = fuzz.token_set_ratio(norm_understat_h, norm_ref_opponent)
 
-                                if opponent_match_score >= 90:  # High confidence match for the opponent
+                                if opponent_match_score >= 90:
                                     validated_gw = ref_gw_val
                                     match_validated_as_epl = True
-                                    break  # Found a valid EPL context for this Understat match
+                                    break
 
                         if match_validated_as_epl:
                             row_data = {
@@ -287,7 +313,6 @@ async def main():
         return
 
     df['gameweek_for_idx'] = df['gameweek_for_idx'].fillna(-1).astype(int)
-
     df = df.sort_values(by=['season_formatted_for_idx', 'player_name_for_idx', 'gameweek_for_idx'])
 
     try:
@@ -298,7 +323,9 @@ async def main():
         print("DataFrame columns:", df.columns)
         print("Saving DataFrame without index due to error.")
         try:
-            df.to_csv("premier_league_player_gameweek_stats_NO_INDEX.csv", index=False)
+            # --- UPDATED FILE PATH ---
+            no_index_path = os.path.join(cleaned_data_dir, "premier_league_player_gameweek_stats_NO_INDEX.csv")
+            df.to_csv(no_index_path, index=False)
         except Exception as e_noindex:
             print(f"Could not save DataFrame without index: {e_noindex}")
         return
@@ -320,8 +347,14 @@ async def main():
         return
 
     df_output = df[final_output_columns]
-    csv_filename = "premier_league_player_gameweek_stats_2018_2023.csv"
+
+    # --- UPDATED FILE PATH ---
+    csv_filename = os.path.join(cleaned_data_dir,
+                                "premier_league_player_gameweek_stats_2016-24")
+
     try:
+        # Ensure the directory exists before saving
+        os.makedirs(cleaned_data_dir, exist_ok=True)
         df_output.to_csv(csv_filename)
         print(f"Data successfully saved to {csv_filename}")
     except Exception as e:
