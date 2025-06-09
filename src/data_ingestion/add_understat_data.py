@@ -97,7 +97,7 @@ async def get_2024_25_premier_league_player_ids(understat_client):
 
 
 async def main():
-    start_year = 2016
+    start_year = 2020
     end_year = 2023
     all_player_rows = []
     appended_rows_count = 0
@@ -105,11 +105,14 @@ async def main():
     # --- UPDATED FILE PATH ---
     # Construct the path relative to the script's location
     script_dir = os.path.dirname(__file__)
-    cleaned_data_dir = os.path.abspath(os.path.join(script_dir, "../../../data/cleaned"))
+    cleaned_data_dir = os.path.abspath(os.path.join(script_dir, "../../data/raw/cleaned"))
 
     reference_csv_path = os.path.join(cleaned_data_dir, "cleaned_merged_seasons_team_aggregated.csv")
 
-    reference_game_contexts = defaultdict(set)
+    # --- REVISED LOOKUP STRUCTURE ---
+    # Key: (season, fpl_element_id, kickoff_date)
+    # Value: List of [(opponent_name, was_home, gameweek)]
+    fpl_player_game_lookup = defaultdict(list)
     fpl_player_name_to_id_lookup = {}
 
     try:
@@ -127,26 +130,34 @@ async def main():
                 f"CRITICAL Warning: Reference CSV ('{reference_csv_path}') is missing required columns: {missing_cols}. Cannot proceed effectively.")
             return
 
+        # --- REVISED REFERENCE DATA PROCESSING ---
         for _, row in gw_reference_df.iterrows():
             ref_season = str(row['season_x'])
-            ref_date = str(row['kickoff_time_date_only'])
-            ref_gw = row['GW']
+            fpl_element_id = to_int(row['element'])
+            kickoff_date = str(row['kickoff_time_date_only'])
             ref_opponent_name = normalize_team_name(str(row['opp_team_name']))
-            if pd.isna(row['was_home']):
-                continue
-            ref_was_home = False
-            if isinstance(row['was_home'], bool):
-                ref_was_home = row['was_home']
-            elif isinstance(row['was_home'], str):
-                ref_was_home = row['was_home'].lower() == 'true'
-            if ref_opponent_name:
-                reference_game_contexts[(ref_season, ref_date)].add(
-                    (ref_opponent_name, ref_was_home, ref_gw)
-                )
+            ref_gw = to_int(row['GW'])
             fpl_player_name_norm = str(row['name']).lower().strip()
-            fpl_element_id = row['element']
+            was_home_raw = row['was_home']
+
+            if pd.isna(was_home_raw) or not ref_opponent_name:
+                continue
+
+            if isinstance(was_home_raw, str):
+                ref_was_home = was_home_raw.lower() == 'true'
+            else:
+                ref_was_home = bool(was_home_raw)
+
+            # Populate the game lookup using the more specific key
+            fpl_player_game_lookup[(ref_season, fpl_element_id, kickoff_date)].append(
+                (ref_opponent_name, ref_was_home, ref_gw)
+            )
+
+            # Populate the name-to-ID lookup
             fpl_player_name_to_id_lookup[(ref_season, fpl_player_name_norm)] = fpl_element_id
-        print(f"Successfully built reference game contexts and FPL player lookups from {reference_csv_path}.")
+
+        print(f"Successfully built FPL player game and name lookups from {reference_csv_path}.")
+
 
     except FileNotFoundError:
         print(f"CRITICAL Warning: Reference file '{reference_csv_path}' not found.")
@@ -191,7 +202,6 @@ async def main():
                     player_id = int(player_id_str)
 
                     if players_in_2024_season_ids and player_id not in players_in_2024_season_ids:
-                        # Skip this player if they are not in the 2024-25 season
                         continue
 
                     print(f"  Processing Understat player: {player_name_understat} (ID: {player_id_str})")
@@ -244,31 +254,33 @@ async def main():
                             else:
                                 continue
 
-                        relevant_ref_contexts = reference_game_contexts.get(
-                            (season_formatted, understat_match_date_only), set())
-
+                        # --- REVISED MATCH VALIDATION LOGIC ---
                         validated_gw = -1
                         match_validated_as_epl = False
 
-                        if relevant_ref_contexts:
-                            understat_h_team_raw = m_data.get('h_team')
-                            understat_a_team_raw = m_data.get('a_team')
-                            if not understat_h_team_raw or not understat_a_team_raw: continue
+                        # Only proceed if we have a valid FPL ID for the player
+                        if calculated_fpl_id != -1:
+                            lookup_key = (season_formatted, calculated_fpl_id, understat_match_date_only)
+                            possible_fpl_games = fpl_player_game_lookup.get(lookup_key)
 
-                            norm_understat_h = normalize_team_name(understat_h_team_raw)
-                            norm_understat_a = normalize_team_name(understat_a_team_raw)
+                            if possible_fpl_games:
+                                understat_h_team_raw = m_data.get('h_team')
+                                understat_a_team_raw = m_data.get('a_team')
+                                if not understat_h_team_raw or not understat_a_team_raw:
+                                    continue
 
-                            for norm_ref_opponent, ref_was_home_val, ref_gw_val in relevant_ref_contexts:
-                                opponent_match_score = 0
-                                if ref_was_home_val:
-                                    opponent_match_score = fuzz.token_set_ratio(norm_understat_a, norm_ref_opponent)
-                                else:
-                                    opponent_match_score = fuzz.token_set_ratio(norm_understat_h, norm_ref_opponent)
+                                norm_understat_h = normalize_team_name(understat_h_team_raw)
+                                norm_understat_a = normalize_team_name(understat_a_team_raw)
 
-                                if opponent_match_score >= 90:
-                                    validated_gw = ref_gw_val
-                                    match_validated_as_epl = True
-                                    break
+                                # Check against the specific FPL games for that player on that day
+                                for ref_opponent_name, ref_was_home, ref_gw in possible_fpl_games:
+                                    understat_opponent_name = norm_understat_a if ref_was_home else norm_understat_h
+                                    opponent_match_score = fuzz.token_set_ratio(understat_opponent_name, ref_opponent_name)
+
+                                    if opponent_match_score >= 90:
+                                        validated_gw = ref_gw
+                                        match_validated_as_epl = True
+                                        break  # Match found, no need to check further
 
                         if match_validated_as_epl:
                             row_data = {
@@ -350,7 +362,7 @@ async def main():
 
     # --- UPDATED FILE PATH ---
     csv_filename = os.path.join(cleaned_data_dir,
-                                "premier_league_player_gameweek_stats_2016-24")
+                                "understat_2020_24.csv")
 
     try:
         # Ensure the directory exists before saving

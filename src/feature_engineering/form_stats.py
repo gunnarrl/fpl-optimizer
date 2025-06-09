@@ -30,9 +30,17 @@ def calculate_form_stats(input_filepath, output_filepath):
         print("Error: 'understat_missing' column not found. This is required for conditional form calculations.")
         return
 
+    # It's also a good idea to ensure 'kickoff_time' is a datetime object for robust sorting
+    if 'kickoff_time' in df.columns:
+        df['kickoff_time'] = pd.to_datetime(df['kickoff_time'])
+    else:
+        print("Error: 'kickoff_time' column not found, which is required for sorting. Aborting.")
+        return
+
     # --- 2. Sort Data for Chronological Rolling Calculations ---
-    df.sort_values(by=['season_x', 'element', 'GW'], inplace=True)
-    print("Data sorted by season, player (element), and gameweek.")
+    # FIX: Sorting by 'kickoff_time' instead of 'GW' for accurate chronological order.
+    df.sort_values(by=['season_x', 'element', 'kickoff_time'], inplace=True)
+    print("Data sorted by season, player (element), and kickoff_time.")
 
     # --- 3. Define Columns for Form Calculation ---
     stats_to_process = [

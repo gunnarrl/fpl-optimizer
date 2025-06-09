@@ -30,7 +30,6 @@ def process_and_merge_data(fpl_filepath, understat_filepath, playerlist_filepath
         return
 
     # --- 1. Prepare Player List for Filtering ---
-    # These are the players we are interested in, for whom we want to gather historical data.
     try:
         player_list_df['first_name'] = player_list_df['first_name'].astype(str).fillna('')
         player_list_df['second_name'] = player_list_df['second_name'].astype(str).fillna('')
@@ -48,80 +47,59 @@ def process_and_merge_data(fpl_filepath, understat_filepath, playerlist_filepath
         print(f"An error occurred during player list preparation: {e}")
         return
 
-    # --- 2. Filter FPL Data for Target Players (across all their historical seasons) ---
+    # --- 2. Filter FPL Data & Create Merge Key ---
     original_fpl_columns = list(fpl_df.columns)
-
-    # Filter FPL data by player names from the player_idlist.csv.
-    # This gets all historical data for players expected in the target_season_context.
     fpl_df_filtered_by_player = fpl_df[fpl_df['name'].isin(current_season_player_names)].copy()
+
+    # *** FIX START: Create a mergeable date column from FPL 'kickoff_time' ***
+    try:
+        fpl_df_filtered_by_player['merge_date'] = pd.to_datetime(
+            fpl_df_filtered_by_player['kickoff_time']).dt.date.astype(str)
+    except KeyError:
+        print("Error: 'kickoff_time' column not found in FPL data. Cannot create date-based merge key.")
+        return
+    # *** FIX END ***
 
     if fpl_df_filtered_by_player.empty:
         print(
             f"No historical FPL data found for any of the {len(current_season_player_names)} players in the player list. Output file will likely be empty.")
-        # Create an empty file with headers if no data found for these players
         pd.DataFrame(columns=original_fpl_columns + ['xG', 'xA', 'key_passes', 'npg', 'npxG', 'xGChain', 'xGBuildup',
                                                      'understat_missing']).to_csv(output_filepath, index=False)
         return
     print(f"Found {fpl_df_filtered_by_player.shape[0]} historical FPL data rows for players in the player list.")
-
-    # This DataFrame now contains all historical entries for the selected players
     fpl_df_to_merge = fpl_df_filtered_by_player
 
-    # --- 3. Prepare Understat Data ---
+    # --- 3. Prepare Understat Data & Create Merge Key ---
     TEAM_NAME_MAPPINGS = {
-        "Arsenal": "Arsenal",
-    "Aston Villa": "Aston Villa",
-    "Bournemouth": "Bournemouth",
-    "Brentford": "Brentford",
-    "Brighton": "Brighton",
-    "Burnley": "Burnley",
-    "Cardiff": "Cardiff",
-    "Chelsea": "Chelsea",
-    "Crystal Palace": "Crystal Palace",
-    "Everton": "Everton",
-    "Fulham": "Fulham",
-    "Huddersfield": "Huddersfield",
-    "Hull": "Hull",
-    "Ipswich": "Ipswich",
-    "Leeds": "Leeds",
-    "Leicester": "Leicester",
-    "Liverpool": "Liverpool",
-    "Luton": "Luton",
-    "Manchester City": "Man City",
-    "Manchester United": "Man Utd",
-    "Middlesbrough": "Middlesbrough",
-    "Newcastle United": "Newcastle",
-    "Norwich": "Norwich",
-    "Nottingham Forest": "Nott'm Forest",
-    "Sheffield United": "Sheffield Utd",
-    "Southampton": "Southampton",
-    "Stoke": "Stoke",
-    "Sunderland": "Sunderland",
-    "Swansea": "Swansea",
-    "Tottenham": "Spurs",
-    "Watford": "Watford",
-    "West Bromwich Albion": "West Brom",
-    "West Ham": "West Ham",
-    "Wolverhampton Wanderers": "Wolves"
+        "Manchester City": "Man City", "Manchester United": "Man Utd", "Newcastle United": "Newcastle",
+        "Nottingham Forest": "Nott'm Forest", "Sheffield United": "Sheffield Utd", "Tottenham": "Spurs",
+        "West Bromwich Albion": "West Brom", "Wolverhampton Wanderers": "Wolves"
     }
     understat_df['h_team'] = understat_df['h_team'].replace(TEAM_NAME_MAPPINGS)
     understat_df['a_team'] = understat_df['a_team'].replace(TEAM_NAME_MAPPINGS)
 
-    # Rename 'Season' to 'season_x' to match FPL data for merging historical seasons
-    understat_df.rename(columns={'Season': 'season_x', 'fpl_id': 'element'}, inplace=True)
+    # *** FIX START: Create a mergeable date column from Understat 'date' and prepare for merge ***
+    try:
+        understat_df['merge_date'] = pd.to_datetime(understat_df['date']).dt.date.astype(str)
+    except KeyError:
+        print("Error: 'date' column not found in Understat data. Cannot create date-based merge key.")
+        return
 
+    understat_df.rename(columns={'fpl_id': 'element'}, inplace=True)
     understat_cols_to_merge = [
-        'season_x', 'GW', 'element', 'xG', 'xA',
+        'element', 'merge_date', 'xG', 'xA',
         'key_passes', 'npg', 'npxG', 'xGChain', 'xGBuildup',
         'h_team', 'a_team'
     ]
+    # *** FIX END ***
+
     understat_cols_to_merge = [col for col in understat_cols_to_merge if col in understat_df.columns]
     understat_subset = understat_df[understat_cols_to_merge]
 
     # --- 4. Merge DataFrames ---
-    # Merge will use 'season_x', 'GW', 'element' to combine historical FPL data with historical Understat data.
-    master_df = pd.merge(fpl_df_to_merge, understat_subset, on=['season_x', 'GW', 'element'], how='left')
-    print("Historical FPL and Understat data merged successfully.")
+    # *** FIX: Changed the merge key from ['season_x', 'GW', 'element'] to ['element', 'merge_date'] ***
+    master_df = pd.merge(fpl_df_to_merge, understat_subset, on=['element', 'merge_date'], how='left')
+    print("Historical FPL and Understat data merged successfully using player ID and date.")
 
     # --- 5. Fill Missing 'team_x' Values ---
     if 'h_team' in master_df.columns and 'a_team' in master_df.columns:
@@ -134,7 +112,7 @@ def process_and_merge_data(fpl_filepath, understat_filepath, playerlist_filepath
     else:
         print("Warning: 'h_team' or 'a_team' not found in merged data. Skipping 'team_x' fill for merged rows.")
 
-    # --- 6. Handle Missing Understat Data and Create 'understat_missing' Column ---
+    # --- 6. Handle Missing Understat Data ---
     understat_value_columns = ['xG', 'xA', 'key_passes', 'npg', 'npxG', 'xGChain', 'xGBuildup']
 
     for col in understat_value_columns:
@@ -142,7 +120,7 @@ def process_and_merge_data(fpl_filepath, understat_filepath, playerlist_filepath
             master_df[col] = np.nan
 
     master_df['understat_missing'] = 0
-    is_missing_understat_data_mask = master_df['xG'].isnull()  # Using xG as a proxy for a missing Understat row
+    is_missing_understat_data_mask = master_df['xG'].isnull()
 
     condition_minutes_zero_missing = (master_df['minutes'] == 0) & is_missing_understat_data_mask
     master_df.loc[condition_minutes_zero_missing, understat_value_columns] = \
@@ -157,6 +135,7 @@ def process_and_merge_data(fpl_filepath, understat_filepath, playerlist_filepath
     print("Processed 'understat_missing' column and default values for Understat metrics.")
 
     # --- 7. Define Final Columns and Save ---
+    # We add the new understat columns, but no need to add 'merge_date' to the final output.
     output_columns = original_fpl_columns[:]
     for col in understat_value_columns:
         if col not in output_columns:
@@ -169,20 +148,17 @@ def process_and_merge_data(fpl_filepath, understat_filepath, playerlist_filepath
             master_df[col] = 0
 
     master_final_df = master_df[output_columns]
-
     master_final_df.to_csv(output_filepath, index=False)
     print(f"Successfully created the master combined file at: {output_filepath}")
     print(f"Final dataset dimensions: {master_final_df.shape}")
 
 
 if __name__ == '__main__':
-    # Define the filepaths for your CSV files
     player_list_file = '../../data/raw/2024-25/player_idlist.csv'
     fpl_data_file = '../../data/raw/cleaned/cleaned_merged_seasons_team_aggregated.csv'
-    understat_data_file = '../../data/raw/cleaned/understats_2016_24.csv'
+    understat_data_file = '../../data/raw/cleaned/understat_2020_24.csv'
     output_file = '../../data/raw/cleaned/master_combined.csv'
     current_fpl_season = '2024-25'
 
-    # Run the processing and merge function
     process_and_merge_data(fpl_data_file, understat_data_file, player_list_file, output_file,
                            target_season_context=current_fpl_season)

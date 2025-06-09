@@ -5,7 +5,8 @@ import os
 def add_expected_points(master_filepath, output_filepath):
     """
     Loads a master dataset, finds and combines seasonal expected points (xP) data,
-    handles duplicates in the source data, and merges it into the master dataset.
+    handles duplicates in the source data, and merges it into the master dataset
+    using 'element' and 'kickoff_time' as unique keys.
 
     Args:
         master_filepath (str): The path to the master CSV file (e.g., master_combined.csv).
@@ -37,14 +38,16 @@ def add_expected_points(master_filepath, output_filepath):
             try:
                 gw_df = pd.read_csv(xp_file_path)
 
-                if 'element' in gw_df.columns and 'GW' in gw_df.columns and 'xP' in gw_df.columns:
-                    temp_df = gw_df[['element', 'GW', 'xP']].copy()
-                    temp_df['season_x'] = season_folder_name
+                # Use 'element', 'kickoff_time', and 'xP' as the required columns
+                required_columns = ['element', 'kickoff_time', 'xP']
+                if all(col in gw_df.columns for col in required_columns):
+                    temp_df = gw_df[required_columns].copy()
                     xp_data_frames.append(temp_df)
                     print(f"  > Successfully loaded and processed xP data for season {season_folder_name}")
                 else:
+                    missing_cols = [col for col in required_columns if col not in gw_df.columns]
                     print(
-                        f"  > WARNING: Skipped file for season {season_folder_name}. Missing one or more required columns: 'element', 'GW', 'xP'.")
+                        f"  > WARNING: Skipped file for season {season_folder_name}. Missing required columns: {', '.join(missing_cols)}.")
             except Exception as e:
                 print(f"  > ERROR: Could not read or process file for season {season_folder_name}. Reason: {e}")
         else:
@@ -57,20 +60,23 @@ def add_expected_points(master_filepath, output_filepath):
         all_xp_df = pd.concat(xp_data_frames, ignore_index=True)
         print(f"\nSuccessfully combined all available xP data. Total xP entries before deduplication: {len(all_xp_df)}")
 
-        # --- NEW: Handle potential duplicates in the xP data ---
-        # This is the critical fix. We remove duplicates based on the merge keys to prevent row multiplication.
-        # We keep the 'last' entry, but 'first' or calculating the 'mean' could also be valid strategies.
-        all_xp_df.drop_duplicates(subset=['season_x', 'GW', 'element'], keep='last', inplace=True)
+        # Handle potential duplicates in the xP data using the new unique keys
+        all_xp_df.drop_duplicates(subset=['element', 'kickoff_time'], keep='last', inplace=True)
         print(f"Deduplication complete. Total unique xP entries to merge: {len(all_xp_df)}")
 
+        # Check if the master dataframe has the 'kickoff_time' column before proceeding
+        if 'kickoff_time' not in master_df.columns:
+            print("\n--- CRITICAL ERROR: 'kickoff_time' column not found in the master dataset. Cannot perform the merge. ---")
+            return
+
         # Ensure data types are consistent for merging
+        master_df['kickoff_time'] = pd.to_datetime(master_df['kickoff_time'])
+        all_xp_df['kickoff_time'] = pd.to_datetime(all_xp_df['kickoff_time'])
         master_df['element'] = master_df['element'].astype(int)
-        master_df['GW'] = master_df['GW'].astype(int)
         all_xp_df['element'] = all_xp_df['element'].astype(int)
-        all_xp_df['GW'] = all_xp_df['GW'].astype(int)
 
         # Perform a left merge to add the xP column to the master DataFrame
-        master_df = pd.merge(master_df, all_xp_df, on=['season_x', 'GW', 'element'], how='left')
+        master_df = pd.merge(master_df, all_xp_df, on=['element', 'kickoff_time'], how='left')
         print("Merge complete. 'xP' column has been added to the master dataset.")
 
         # --- 4. Handle Missing Values ---

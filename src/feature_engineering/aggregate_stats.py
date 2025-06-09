@@ -31,9 +31,17 @@ def calculate_aggregate_stats(input_filepath, output_filepath):
             "Error: 'understat_missing' column not found in the input file. This column is required for the conditional aggregation logic. Aborting.")
         return
 
+    # It's also a good idea to ensure 'kickoff_time' is a datetime object for robust sorting
+    if 'kickoff_time' in df.columns:
+        df['kickoff_time'] = pd.to_datetime(df['kickoff_time'])
+    else:
+        print("Error: 'kickoff_time' column not found, which is required for sorting. Aborting.")
+        return
+
     # --- 2. Sort Data for Chronological Aggregation ---
-    df.sort_values(by=['season_x', 'element', 'GW'], inplace=True)
-    print("Data sorted by season, player (element), and gameweek.")
+    # FIX: Sorting by 'kickoff_time' instead of 'GW' for accurate chronological order.
+    df.sort_values(by=['season_x', 'element', 'kickoff_time'], inplace=True)
+    print("Data sorted by season, player (element), and kickoff_time.")
 
     # --- 3. Define Columns for Aggregation (Separating Understat from others) ---
     understat_stats_to_aggregate = [
