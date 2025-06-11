@@ -60,14 +60,8 @@ def add_expected_points(master_filepath, output_filepath):
         all_xp_df = pd.concat(xp_data_frames, ignore_index=True)
         print(f"\nSuccessfully combined all available xP data. Total xP entries before deduplication: {len(all_xp_df)}")
 
-        # Handle potential duplicates in the xP data using the new unique keys
         all_xp_df.drop_duplicates(subset=['element', 'kickoff_time'], keep='last', inplace=True)
         print(f"Deduplication complete. Total unique xP entries to merge: {len(all_xp_df)}")
-
-        # Check if the master dataframe has the 'kickoff_time' column before proceeding
-        if 'kickoff_time' not in master_df.columns:
-            print("\n--- CRITICAL ERROR: 'kickoff_time' column not found in the master dataset. Cannot perform the merge. ---")
-            return
 
         # Ensure data types are consistent for merging
         master_df['kickoff_time'] = pd.to_datetime(master_df['kickoff_time'])
@@ -80,7 +74,7 @@ def add_expected_points(master_filepath, output_filepath):
         print("Merge complete. 'xP' column has been added to the master dataset.")
 
         # --- 4. Handle Missing Values ---
-        master_df['xP'] = master_df['xP'].fillna(0)
+        master_df['xP'] = master_df['xP'].fillna(0.0)
         print("Filled missing 'xP' values with 0.")
 
     # --- 5. Validate Final Row Count and Save ---

@@ -98,7 +98,7 @@ async def get_2024_25_premier_league_player_ids(understat_client):
 
 async def main():
     start_year = 2020
-    end_year = 2023
+    end_year = 2024
     all_player_rows = []
     appended_rows_count = 0
 
@@ -324,7 +324,6 @@ async def main():
         print("DataFrame is empty after collecting rows. CSV file will not be created.")
         return
 
-    df['gameweek_for_idx'] = df['gameweek_for_idx'].fillna(-1).astype(int)
     df = df.sort_values(by=['season_formatted_for_idx', 'player_name_for_idx', 'gameweek_for_idx'])
 
     try:

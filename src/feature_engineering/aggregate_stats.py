@@ -50,7 +50,7 @@ def calculate_aggregate_stats(input_filepath, output_filepath):
 
     other_stats_to_aggregate = [
         'xP', 'goals_scored', 'saves', 'penalties_saved', 'assists',
-        'total_points', 'minutes', 'own_goals', 'penalties_missed', 'clean_sheets'
+        'total_points', 'minutes', 'own_goals', 'penalties_missed', 'clean_sheets', 'threat', 'ict_index', 'influence', 'creativity'
     ]
 
     # Verify which of the requested columns actually exist in the DataFrame

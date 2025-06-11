@@ -119,20 +119,39 @@ def process_and_merge_data(fpl_filepath, understat_filepath, playerlist_filepath
         if col not in master_df.columns:
             master_df[col] = np.nan
 
-    master_df['understat_missing'] = 0
-    is_missing_understat_data_mask = master_df['xG'].isnull()
+    master_df['played_but_missing_understat'] = (
+            (master_df['minutes'] > 0) & (master_df['xG'].isnull())
+    ).astype(int)
 
-    condition_minutes_zero_missing = (master_df['minutes'] == 0) & is_missing_understat_data_mask
-    master_df.loc[condition_minutes_zero_missing, understat_value_columns] = \
-        master_df.loc[condition_minutes_zero_missing, understat_value_columns].fillna(0)
+    # --- Step 3: Impute values based on playing time ---
 
-    condition_minutes_positive_missing = (master_df['minutes'] > 0) & is_missing_understat_data_mask
-    master_df.loc[condition_minutes_positive_missing, 'understat_missing'] = 1
-    master_df.loc[condition_minutes_positive_missing, understat_value_columns] = \
-        master_df.loc[condition_minutes_positive_missing, understat_value_columns].fillna(-1)
+    # Condition 1: Player did not play (minutes == 0).
+    # The correct value for their performance stats is 0.
+    did_not_play_mask = (master_df['minutes'] == 0)
+    master_df.loc[did_not_play_mask, understat_value_columns] = \
+        master_df.loc[did_not_play_mask, understat_value_columns].fillna(0)
 
-    master_df[understat_value_columns] = master_df[understat_value_columns].fillna(0)
-    print("Processed 'understat_missing' column and default values for Understat metrics.")
+    # Condition 2: Player PLAYED but data is missing.
+    # This is a true missing value. We will leave it as NaN for now
+    # so that models like XGBoost/LightGBM can handle it optimally.
+    # This section is intentionally left blank as we handle the final fill in the next step.
+
+    # --- Step 4: Final Imputation for any remaining NaNs ---
+    # This now only affects the 'played_but_missing_understat' cases.
+    # Instead of a blanket '0' or '-1', we can make a more intelligent choice.
+
+    # OPTION A (Recommended for XGBoost/LightGBM): Leave as NaN
+    # No code needed here if you are using these models. They will handle it.
+
+    # OPTION C (Advanced): Impute with a rolling player average
+    # This is the most complex but potentially most accurate method.
+    # It assumes the player performed at their recent average.
+    # for col in understat_value_columns:
+    #     # Group by player, calculate rolling mean over 5 games, then backfill NaNs
+    #     rolling_mean = master_df.groupby('name')[col].transform(lambda x: x.rolling(5, min_periods=1).mean())
+    #     master_df[col] = master_df[col].fillna(rolling_mean)
+    #     # Fill any remaining NaNs for players with no history with 0
+    #     master_df[col] = master_df[col].fillna(0)
 
     # --- 7. Define Final Columns and Save ---
     # We add the new understat columns, but no need to add 'merge_date' to the final output.
