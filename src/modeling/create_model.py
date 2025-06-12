@@ -211,42 +211,6 @@ if 'GW' in test_df.columns:
 
     print("Walk-forward validation complete.")
 
-    # ✅ Task 17: Track and plot MAE per GW from walk-forward test
-    plt.figure(figsize=(12, 6))
-    plt.plot([gw for gw in gameweeks][:len(walk_forward_maes)], walk_forward_maes, marker='o', linestyle='-')
-    plt.title('Walk-Forward MAE per Gameweek')
-    plt.xlabel('Gameweek')
-    plt.ylabel('Mean Absolute Error (MAE)')
-    plt.grid(True)
-    plt.show()
-    print("\n✅ Task 17: Plotted MAE per gameweek.")
-else:
-    print("⚠️ 'GW' column not found in test_df, skipping walk-forward validation (Task 15-17).")
-
-# --- 🧪 DIAGNOSTICS ---
-
-# ✅ Task 18: Print top 20 XGBoost feature importances
-feature_importances = pd.DataFrame({
-    'feature': X_train.columns,
-    'importance': xgb_reg.feature_importances_
-}).sort_values('importance', ascending=False)
-
-print("\n✅ Task 18: Top 20 Feature Importances:")
-print(feature_importances.head(20))
-
-# ✅ Task 19: Run SHAP value analysis on 100 random test samples
-print("\n✅ Task 19: Running SHAP analysis...")
-explainer = shap.TreeExplainer(xgb_reg)
-# Use .values for SHAP compatibility with all pandas versions
-# Note: X_test is already scaled at this point
-shap_values = explainer(X_test.sample(100, random_state=42))
-
-shap.summary_plot(shap_values, X_test.sample(100, random_state=42), show=False)
-plt.title("SHAP Summary Plot")
-plt.tight_layout()
-plt.show()
-print("SHAP summary plot generated.")
-
 # ✅ Task 20: Add binary classifier to predict if player will play (minutes > 0)
 print("\n✅ Task 20: Training a binary classifier for player minutes...")
 # The X_train and X_test data are already scaled, so the classifier will use normalized features

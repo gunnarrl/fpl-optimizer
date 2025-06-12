@@ -1,7 +1,7 @@
 import pandas as pd
 import pulp
 
-
+TEAM = ['Sels', 'Sanchez' 'Virgil', 'Kerkez', 'Tarkowski', 'Gabriel', 'Trent', 'Bukayo Saka', 'Bruno Fernandes', 'Salah', 'Palmer', 'Semenyo', 'Haaland', 'Wood', 'Isak' ]
 def optimize_fpl_squad(predictions_df, target_gw):
     """
     Optimizes an FPL squad based on player predictions for a specific gameweek.
@@ -104,7 +104,7 @@ def optimize_fpl_squad(predictions_df, target_gw):
 if __name__ == '__main__':
     try:
         # Load the predictions from the CSV file
-        predictions_df = pd.read_csv('../../data/predictions/predictions_xgb.csv')
+        predictions_df = pd.read_csv('../../data/output/predictions/predictions_xgb.csv')
 
         # --- Handle Double Gameweeks ---
         # Group by player element and gameweek, summing points for DGWs.
