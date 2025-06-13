@@ -22,7 +22,7 @@ def optimize_fpl_squad(predictions_df, target_gw):
         return pd.DataFrame(), pd.DataFrame(), {}
 
     # Task 2: Keep only relevant columns, including next_GW_points
-    player_pool = gw_df[['element', 'name', 'position', 'value', 'team', 'predicted_points', 'next_GW_points']].copy()
+    player_pool = gw_df[['element', 'name', 'position', 'value', 'team', 'predicted_points_gw+1', 'points_gw+1']].copy()
 
     # Task 3: Value is already in the correct integer form (e.g., 40 for 4.0M)
     player_pool.rename(columns={'value': 'cost'}, inplace=True)
@@ -44,7 +44,7 @@ def optimize_fpl_squad(predictions_df, target_gw):
     player_vars = pulp.LpVariable.dicts("Player", player_pool['element'], 0, 1, pulp.LpBinary)
 
     # Task 7: Define the objective function (maximize current GW predicted points)
-    prob += pulp.lpSum([player_vars[p['element']] * p['predicted_points'] for _, p in player_pool.iterrows()])
+    prob += pulp.lpSum([player_vars[p['element']] * p['predicted_points_gw+1'] for _, p in player_pool.iterrows()])
 
     # Task 8: Add total cost constraint
     prob += pulp.lpSum(
@@ -75,7 +75,7 @@ def optimize_fpl_squad(predictions_df, target_gw):
     final_squad = player_pool[player_pool['element'].isin(selected_elements)]
 
     # Task 14: Calculate total predicted points, cost, and breakdown
-    total_predicted_points = final_squad['predicted_points'].sum()
+    total_predicted_points = final_squad['predicted_points_gw+1'].sum()
     total_cost = final_squad['cost'].sum()
 
     summary = {
@@ -85,7 +85,7 @@ def optimize_fpl_squad(predictions_df, target_gw):
     }
 
     # Task 15: Separate starting XI vs bench based on predicted_points
-    final_squad = final_squad.sort_values(by='predicted_points', ascending=False)
+    final_squad = final_squad.sort_values(by='predicted_points_gw+1', ascending=False)
     starting_xi = final_squad.head(11)
     bench = final_squad.tail(4)
 
@@ -94,7 +94,7 @@ def optimize_fpl_squad(predictions_df, target_gw):
     vice_captain = starting_xi.iloc[1]
 
     # Adjust total points for captain
-    summary["Total Predicted Points (with Captain)"] = total_predicted_points + captain['predicted_points']
+    summary["Total Predicted Points (with Captain)"] = total_predicted_points + captain['predicted_points_gw+1']
     summary["Captain"] = captain['name']
     summary["Vice-Captain"] = vice_captain['name']
 
@@ -104,14 +104,14 @@ def optimize_fpl_squad(predictions_df, target_gw):
 if __name__ == '__main__':
     try:
         # Load the predictions from the CSV file
-        predictions_df = pd.read_csv('../../data/output/predictions/predictions_xgb.csv')
+        predictions_df = pd.read_csv('../../data/output/predictions/koa_predictions_updated.csv')
 
         # --- Handle Double Gameweeks ---
         # Group by player element and gameweek, summing points for DGWs.
         # Keep other essential info like name, position, etc.
         agg_dict = {
-            'predicted_points': 'sum',
-            'next_GW_points': 'sum',
+            'predicted_points_gw+1': 'sum',
+            'points_gw+1': 'sum',
             'name': 'first',
             'position': 'first',
             'value': 'first',
@@ -137,15 +137,15 @@ if __name__ == '__main__':
                     print(f"{key}: {value}")
 
                 print("\n--- Starting XI ---")
-                print(starting_xi[['name', 'position', 'team', 'predicted_points', 'next_GW_points', 'cost']])
+                print(starting_xi[['name', 'position', 'team', 'predicted_points_gw+1', 'points_gw+1', 'cost']])
 
                 print("\n--- Bench ---")
-                print(bench[['name', 'position', 'team', 'predicted_points', 'next_GW_points', 'cost']])
+                print(bench[['name', 'position', 'team', 'predicted_points_gw+1', 'points_gw+1', 'cost']])
 
                 # --- Calculate and add next_GW_points to the running total ---
                 captain = starting_xi.iloc[0]
                 # Sum the next_GW_points for the starting XI and double the captain's contribution
-                gameweek_next_points = starting_xi['next_GW_points'].sum() + captain['next_GW_points']
+                gameweek_next_points = starting_xi['points_gw+1'].sum() + captain['points_gw+1']
                 cumulative_total_points += gameweek_next_points
 
                 print("\n--- Points Projection ---")
