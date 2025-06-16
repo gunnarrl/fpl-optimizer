@@ -8,22 +8,16 @@ import os
 # Common FPL names like 'Gabriel dos Santos Magalhães' are often just 'Gabriel'.
 # I have adjusted this below, but you may need to check your CSV for others.
 PLAYER_NAMES = [
-    'Matz Sels', 'Karl Hein', 'Virgil van Dijk', 'Milos Kerkez',
-    'Lino da Cruz Sousa', 'Gabriel Magalhães', 'Trent Alexander-Arnold', 'Jarrod Bowen',
+    'Matz Sels', 'Joe Gauci', 'Joško Gvardiol', 'Milos Kerkez',
+    'Lino da Cruz Sousa', 'Daniel Muñoz', 'Nikola Milenković', 'Morgan Rogers',
     'Bryan Mbeumo', 'Mohamed Salah', 'Cole Palmer', 'Antoine Semenyo',
     'Erling Haaland', 'Chris Wood', 'Yoane Wissa'
 ]
 
-# Define your starting 11, captain, and vice-captain
-STARTING_11 = [
-    'Matz Sels', 'Virgil van Dijk', 'Gabriel Magalhães', 'Trent Alexander-Arnold',
-    'Bukayo Saka', 'Bryan Mbeumo', 'Mohamed Salah', 'Cole Palmer',
-    'Antoine Semenyo', 'Erling Haaland', 'Chris Wood'
-]
-
+# Define your captain and vice-captain
 CAPTAIN = 'Mohamed Salah'
 VICE_CAPTAIN = 'Erling Haaland'
-
+BUDGET = 1000.0
 
 # --- SCRIPT LOGIC ---
 
@@ -59,17 +53,17 @@ def print_lowest_value_players(df):
 
 def create_initial_squad_json(player_names, starting_11, captain, vice_captain):
     """
-    Generates a JSON file for an initial FPL squad for GW1.
+    Generates a JSON file for an initial FPL squad for GW1 based on the new format.
     """
     try:
         # Load the player data from the CSV file
         df = pd.read_csv("../../data/processed/processed_fpl_data.csv")
     except FileNotFoundError:
         print("Error: 'processed_fpl_data.csv' not found.")
-        print("Please ensure the script is in the same directory as the data file.")
+        print("Please ensure the script is in the correct directory relative to the data file.")
         return
 
-    # Run the query to show the lowest value players
+    # Optional: Run the query to show the lowest value players
     print_lowest_value_players(df)
 
     # Filter for Gameweek 1 data for the selected players for the 2024-25 season
@@ -87,81 +81,89 @@ def create_initial_squad_json(player_names, starting_11, captain, vice_captain):
             return
 
     # --- CALCULATIONS ---
-
-    # 1. Calculate total team cost for GW1
     total_cost = squad_df['value'].sum()
+    bank = BUDGET - total_cost
 
-    # 2. Calculate total future predicted points (GW+1 to GW+6)
+    # Define the columns for the planning horizon (next 6 GWs)
     future_gw_cols = [f'points_gw+{i}' for i in range(1, 7)]
-    total_future_predicted_points = 0
 
-    # 3. Calculate total predicted and actual points for the GW1 JSON file
-    total_gw1_predicted_points = 0
-    total_gw1_actual_points = 0
+    # Initialize totals
+    total_predicted_points_current_gw = 0
+    total_actual_points_current_gw = 0
+    total_predicted_points_planning_horizon = 0
 
     # --- JSON CONSTRUCTION ---
     squad_list_for_json = []
+    starting_xi_elements = []
 
     for _, player in squad_df.iterrows():
         is_starter = player['name'] in starting_11
         is_captain = player['name'] == captain
         is_vice_captain = player['name'] == vice_captain
 
-        info = {
+        # Calculate predicted points over the planning horizon for each player
+        player_planning_total = sum(player.get(col, 0) for col in future_gw_cols)
+
+        # Create the player info dictionary with the new format
+        player_info = {
             'element': int(player['element']),
             'name': player['name'],
             'position': player['position'],
-            'team': player['team_x'],  # Assuming 'team_x' is the correct team name column
-            'value': player.get('value', 0),
-            'was_starting': is_starter,
+            'team': player['team_x'],
+            'cost': player.get('value', 0),
+            'predicted_points_current_gw': player.get('xP'),
+            'actual_points_current_gw': player.get('total_points', 0),
+            'predicted_points_planning_horizon': player_planning_total,
+            'is_starting': is_starter,
             'is_captain': is_captain,
-            'is_vice': is_captain,
-            'predicted': player.get('xP', 0),  # Use xP for single GW prediction
-            'actual': player.get('total_points', 0)  # Actual points for GW1
+            'is_vice': is_vice_captain
         }
-        squad_list_for_json.append(info)
+        squad_list_for_json.append(player_info)
 
-        # Add to totals if the player is in the starting XI
+        # Add to totals and starting XI list if the player is a starter
         if is_starter:
+            starting_xi_elements.append(int(player['element']))
             multiplier = 2 if is_captain else 1
 
-            # Sum up future points for the separate calculation
-            player_future_points = sum(player.get(col, 0) for col in future_gw_cols)
-            total_future_predicted_points += player_future_points * multiplier
+            total_predicted_points_current_gw += player_info['predicted_points_current_gw'] * multiplier
+            total_actual_points_current_gw += player_info['actual_points_current_gw'] * multiplier
+            total_predicted_points_planning_horizon += player_info['predicted_points_planning_horizon'] * multiplier
 
-            # Sum up GW1 predicted and actual points for the JSON output
-            total_gw1_predicted_points += info['predicted'] * multiplier
-            total_gw1_actual_points += info['actual'] * multiplier
-
-
-    # Assemble the final JSON object
+    # Assemble the final JSON object in the requested format
     output_json = {
         'GW': 1,
-        'free_transfers': 1,  # Default for start of season
         'transfers_made': 0,
         'points_hit': 0,
-        'total_predicted_points': total_gw1_predicted_points,
-        'total_actual_points': total_gw1_actual_points,
-        'total_value': total_cost,
-        'squad': sorted(squad_list_for_json, key=lambda x: (x['position'], x['name']))
+        'bank': bank,
+        'chips_used': None,  # No chip used in GW1
+        'transfers_in': {},   # No transfers in for the initial squad
+        'transfers_out': {},  # No transfers out for the initial squad
+        'total_predicted_points_current_gw': total_predicted_points_current_gw,
+        'total_actual_points_current_gw': total_actual_points_current_gw,
+        'total_predicted_points_planning_horizon': total_predicted_points_planning_horizon,
+        'squad': sorted(squad_list_for_json, key=lambda x: (x['position'], x['name'])),
+        'starting_xi': starting_xi_elements
     }
 
     # Save the JSON file
     file_path = "../../data/output/teams/team_gw1.json"
     print(f"\nSaving initial squad for GW1 to {file_path}")
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, 'w') as f:
         json.dump(output_json, f, indent=2)
 
     # --- PRINT SUMMARY ---
     print("\n--- Initial Squad Summary ---")
     print(f"Total Team Cost: £{total_cost:.1f}m")
-    print(f"Total Predicted Points (for GWs 2-7): {total_future_predicted_points:.2f}")
+    print(f"Remaining Bank: £{bank:.1f}m")
+    print(f"Total Predicted Points (GW1): {total_predicted_points_current_gw:.2f}")
+    print(f"Total Predicted Points (Planning Horizon GWs 2-7): {total_predicted_points_planning_horizon:.2f}")
     print("-----------------------------\n")
 
 
 if __name__ == '__main__':
     # Determine the starting 11 based on who is NOT on the bench
-    bench = ['Karl Hein', 'Milos Kerkez', 'Lino da Cruz Sousa', 'Jarrod Bowen']
+    bench = ['Joe Gauci', 'Nikola Milenković', 'Lino da Cruz Sousa', 'Morgan Rogers']
     starting_11 = [p for p in PLAYER_NAMES if p not in bench]
 
     create_initial_squad_json(PLAYER_NAMES, starting_11, CAPTAIN, VICE_CAPTAIN)

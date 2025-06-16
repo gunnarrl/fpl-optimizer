@@ -1,0 +1,429 @@
+{
+  "GW": 2,
+  "transfers_made": 5,
+  "points_hit": 4,
+  "bank": 5,
+  "free_transfers": 1,
+  "chips_used": [
+    "bench_boost"
+  ],
+  "transfers_in": [
+    {
+      "element": 4.0,
+      "name": "Kai Havertz",
+      "position": "FWD",
+      "team": "Arsenal",
+      "cost": 80.0
+    },
+    {
+      "element": 9.0,
+      "name": "Gabriel Martinelli Silva",
+      "position": "MID",
+      "team": "Arsenal",
+      "cost": 70.0
+    },
+    {
+      "element": 91.0,
+      "name": "Mark Flekken",
+      "position": "GK",
+      "team": "Brentford",
+      "cost": 45.0
+    },
+    {
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
+      "position": "DEF",
+      "team": "Liverpool",
+      "cost": 70.0
+    },
+    {
+      "element": 495.0,
+      "name": "Pedro Porro",
+      "position": "DEF",
+      "team": "Spurs",
+      "cost": 55.0
+    }
+  ],
+  "transfers_out": [
+    {
+      "element": 39.0,
+      "name": "Joe Gauci",
+      "position": "GK",
+      "team": "Aston Villa",
+      "cost": 40.0
+    },
+    {
+      "element": 54.0,
+      "name": "Morgan Rogers",
+      "position": "MID",
+      "team": "Aston Villa",
+      "cost": 50.0
+    },
+    {
+      "element": 56.0,
+      "name": "Lino da Cruz Sousa",
+      "position": "DEF",
+      "team": "Aston Villa",
+      "cost": 40.0
+    },
+    {
+      "element": 351.0,
+      "name": "Erling Haaland",
+      "position": "FWD",
+      "team": "Man City",
+      "cost": 150.0
+    },
+    {
+      "element": 573.0,
+      "name": "Nikola Milenkovi\u0107",
+      "position": "DEF",
+      "team": "Nott'm Forest",
+      "cost": 45.0
+    }
+  ],
+  "total_predicted_points_current_gw": 67.77630567550659,
+  "total_actual_points_current_gw": 80.0,
+  "total_predicted_points_planning_horizon": 321.74622082710266,
+  "squad": [
+    {
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
+      "position": "DEF",
+      "team": "Liverpool",
+      "cost": 70.0,
+      "predicted_points_current_gw": 4.515507221221924,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 21.354976654052734,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 495.0,
+      "name": "Pedro Porro",
+      "position": "DEF",
+      "team": "Spurs",
+      "cost": 55.0,
+      "predicted_points_current_gw": 4.1038103103637695,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 24.487732410430908,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 211.0,
+      "name": "Daniel Mu\u00f1oz",
+      "position": "DEF",
+      "team": "Crystal Palace",
+      "cost": 50.0,
+      "predicted_points_current_gw": 3.162442207336426,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 15.569051742553711,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 350.0,
+      "name": "Jo\u0161ko Gvardiol",
+      "position": "DEF",
+      "team": "Man City",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.111157178878784,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 18.372612237930298,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 70.0,
+      "name": "Milos Kerkez",
+      "position": "DEF",
+      "team": "Bournemouth",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.88310980796814,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 11.520320415496826,
+      "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 447.0,
+      "name": "Chris Wood",
+      "position": "FWD",
+      "team": "Nott'm Forest",
+      "cost": 60.0,
+      "predicted_points_current_gw": 4.120832443237305,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 21.745376110076904,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 4.0,
+      "name": "Kai Havertz",
+      "position": "FWD",
+      "team": "Arsenal",
+      "cost": 80.0,
+      "predicted_points_current_gw": 3.600722074508667,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 23.18417263031006,
+      "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 110.0,
+      "name": "Yoane Wissa",
+      "position": "FWD",
+      "team": "Brentford",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.585251569747925,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 17.616057634353638,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 91.0,
+      "name": "Mark Flekken",
+      "position": "GK",
+      "team": "Brentford",
+      "cost": 45.0,
+      "predicted_points_current_gw": 3.383519411087036,
+      "actual_points_current_gw": 3.0,
+      "predicted_points_planning_horizon": 17.79505705833435,
+      "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 443.0,
+      "name": "Matz Sels",
+      "position": "GK",
+      "team": "Nott'm Forest",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.9342098236083984,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 14.16592526435852,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 328.0,
+      "name": "Mohamed Salah",
+      "position": "MID",
+      "team": "Liverpool",
+      "cost": 125.0,
+      "predicted_points_current_gw": 6.7621917724609375,
+      "actual_points_current_gw": 10.0,
+      "predicted_points_planning_horizon": 33.40543174743652,
+      "is_starting": true,
+      "is_captain": true,
+      "is_vice": 0.0
+    },
+    {
+      "element": 9.0,
+      "name": "Gabriel Martinelli Silva",
+      "position": "MID",
+      "team": "Arsenal",
+      "cost": 70.0,
+      "predicted_points_current_gw": 6.337103843688965,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 31.50507116317749,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 182.0,
+      "name": "Cole Palmer",
+      "position": "MID",
+      "team": "Chelsea",
+      "cost": 105.0,
+      "predicted_points_current_gw": 4.39912223815918,
+      "actual_points_current_gw": 17.0,
+      "predicted_points_planning_horizon": 28.431232452392578,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": true
+    },
+    {
+      "element": 99.0,
+      "name": "Bryan Mbeumo",
+      "position": "MID",
+      "team": "Brentford",
+      "cost": 70.0,
+      "predicted_points_current_gw": 4.317603588104248,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 23.44365429878235,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 78.0,
+      "name": "Antoine Semenyo",
+      "position": "MID",
+      "team": "Bournemouth",
+      "cost": 55.0,
+      "predicted_points_current_gw": 3.79753041267395,
+      "actual_points_current_gw": 5.0,
+      "predicted_points_planning_horizon": 19.14954900741577,
+      "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    }
+  ],
+  "starting_xi": [
+    {
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
+      "position": "DEF",
+      "team": "Liverpool",
+      "cost": 70.0,
+      "predicted_points_current_gw": 4.515507221221924,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 21.354976654052734,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 495.0,
+      "name": "Pedro Porro",
+      "position": "DEF",
+      "team": "Spurs",
+      "cost": 55.0,
+      "predicted_points_current_gw": 4.1038103103637695,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 24.487732410430908,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 211.0,
+      "name": "Daniel Mu\u00f1oz",
+      "position": "DEF",
+      "team": "Crystal Palace",
+      "cost": 50.0,
+      "predicted_points_current_gw": 3.162442207336426,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 15.569051742553711,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 350.0,
+      "name": "Jo\u0161ko Gvardiol",
+      "position": "DEF",
+      "team": "Man City",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.111157178878784,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 18.372612237930298,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 447.0,
+      "name": "Chris Wood",
+      "position": "FWD",
+      "team": "Nott'm Forest",
+      "cost": 60.0,
+      "predicted_points_current_gw": 4.120832443237305,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 21.745376110076904,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 110.0,
+      "name": "Yoane Wissa",
+      "position": "FWD",
+      "team": "Brentford",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.585251569747925,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 17.616057634353638,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 443.0,
+      "name": "Matz Sels",
+      "position": "GK",
+      "team": "Nott'm Forest",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.9342098236083984,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 14.16592526435852,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 328.0,
+      "name": "Mohamed Salah",
+      "position": "MID",
+      "team": "Liverpool",
+      "cost": 125.0,
+      "predicted_points_current_gw": 6.7621917724609375,
+      "actual_points_current_gw": 10.0,
+      "predicted_points_planning_horizon": 33.40543174743652,
+      "is_starting": true,
+      "is_captain": true,
+      "is_vice": 0.0
+    },
+    {
+      "element": 9.0,
+      "name": "Gabriel Martinelli Silva",
+      "position": "MID",
+      "team": "Arsenal",
+      "cost": 70.0,
+      "predicted_points_current_gw": 6.337103843688965,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 31.50507116317749,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 182.0,
+      "name": "Cole Palmer",
+      "position": "MID",
+      "team": "Chelsea",
+      "cost": 105.0,
+      "predicted_points_current_gw": 4.39912223815918,
+      "actual_points_current_gw": 17.0,
+      "predicted_points_planning_horizon": 28.431232452392578,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": true
+    },
+    {
+      "element": 99.0,
+      "name": "Bryan Mbeumo",
+      "position": "MID",
+      "team": "Brentford",
+      "cost": 70.0,
+      "predicted_points_current_gw": 4.317603588104248,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 23.44365429878235,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    }
+  ]
+}
