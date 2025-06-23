@@ -18,7 +18,7 @@ class FPLOptimizer:
         # Default configuration
         self.config = {
             'data_dir': os.path.abspath(os.path.join(__file__, "..", "..", "..", "data")),
-            'predictions_file': 'koa_predictions_updated.csv',
+            'predictions_file': 'predictions_autogluon_parallel.csv',
             'output_dir': 'teams',
             'planning_horizon': 6,
             'budget': 1000,
@@ -144,6 +144,42 @@ class FPLOptimizer:
             how='outer'
         ).fillna(0)
         # --- END OF NEW LOGIC ---
+        self.dgw_players_by_gw = {}
+        dgw_df = pd.read_csv('../../data/processed/processed_fpl_data.csv')
+
+        # Filter for the '2024-25' season
+        target_season = '2024-25'
+        dgw_df_filtered = dgw_df[dgw_df['season_x'] == target_season].copy()
+        logger.info(f"Filtered DGW data for season: {target_season}. Rows: {len(dgw_df_filtered)}")
+
+        if not dgw_df_filtered.empty:
+            # Assuming 'GW' is the Gameweek and 'element' is the player ID
+            # or 'team' for team-based DGW identification.
+            # If 'is_dgw' column is present and indicates True for DGWs:
+            if 'is_dgw' in dgw_df_filtered.columns:
+                dgw_df_filtered = dgw_df_filtered[dgw_df_filtered['is_dgw'] == True]
+                logger.info(f"Filtered for 'is_dgw' == True. Rows: {len(dgw_df_filtered)}")
+
+            # Group by GW and collect unique player elements involved in DGWs
+            # Assuming 'element' column exists in your dgw_data.csv for players
+            # If it's team-based, you'll need to map teams to players.
+            if 'element' in dgw_df_filtered.columns and 'GW' in dgw_df_filtered.columns:
+                for gw in dgw_df_filtered['GW'].unique():
+                    players_in_dgw = dgw_df_filtered[dgw_df_filtered['GW'] == gw]['element'].unique().tolist()
+                    self.dgw_players_by_gw[gw] = players_in_dgw
+                    logger.debug(f"GW{gw} DGW players count: {len(players_in_dgw)}")
+            elif 'team' in dgw_df_filtered.columns and 'GW' in dgw_df_filtered.columns:
+                # If dgw_data.csv only has 'team' and 'GW' for DGWs, then map to players
+                for gw in dgw_df_filtered['GW'].unique():
+                    dgw_teams = dgw_df_filtered[dgw_df_filtered['GW'] == gw]['team'].unique().tolist()
+                    players_in_dgw = self.unique_players_df[self.unique_players_df['team'].isin(dgw_teams)][
+                        'element'].tolist()
+                    self.dgw_players_by_gw[gw] = players_in_dgw
+                    logger.debug(f"GW{gw} DGW players count (from teams): {len(players_in_dgw)}")
+            else:
+                logger.warning("DGW file missing 'element' or 'team' and 'GW' columns. Cannot identify DGW players.")
+        else:
+            logger.warning(f"No DGW data found for season {target_season} in {self.dgw_file}")
 
         logger.info(f"Loaded and processed data for {len(self.players)} unique players from {len(self.teams)} teams")
 

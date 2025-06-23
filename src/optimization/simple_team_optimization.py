@@ -104,7 +104,7 @@ def optimize_fpl_squad(predictions_df, target_gw):
 if __name__ == '__main__':
     try:
         # Load the predictions from the CSV file
-        predictions_df = pd.read_csv('../../data/output/predictions/koa_predictions_updated.csv')
+        predictions_df = pd.read_csv('../../data/output/predictions/predictions_autogluon_parallel.csv')
 
         # --- Handle Double Gameweeks ---
         # Group by player element and gameweek, summing points for DGWs.
