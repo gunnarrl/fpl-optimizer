@@ -1,8 +1,8 @@
 {
   "GW": 30,
-  "transfers_made": 2,
-  "points_hit": 1,
-  "bank": 5,
+  "transfers_made": 1,
+  "points_hit": 0,
+  "bank": 0,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
@@ -12,13 +12,6 @@
       "position": "MID",
       "team": "Arsenal",
       "cost": 70.0
-    },
-    {
-      "element": 350.0,
-      "name": "Jo\u0161ko Gvardiol",
-      "position": "DEF",
-      "team": "Man City",
-      "cost": 60.0
     }
   ],
   "transfers_out": [
@@ -28,18 +21,11 @@
       "position": "MID",
       "team": "Arsenal",
       "cost": 70.0
-    },
-    {
-      "element": 311.0,
-      "name": "Trent Alexander-Arnold",
-      "position": "DEF",
-      "team": "Liverpool",
-      "cost": 70.0
     }
   ],
-  "total_predicted_points_current_gw": 58.847259283065796,
-  "total_actual_points_current_gw": 42.0,
-  "total_predicted_points_planning_horizon": 384.1059637069702,
+  "total_predicted_points_current_gw": 58.349419355392456,
+  "total_actual_points_current_gw": 48.0,
+  "total_predicted_points_planning_horizon": 386.2921392917633,
   "squad": [
     {
       "element": 350.0,
@@ -78,7 +64,20 @@
       "predicted_points_planning_horizon": 21.34104609489441,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
+    },
+    {
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
+      "position": "DEF",
+      "team": "Liverpool",
+      "cost": 70.0,
+      "predicted_points_current_gw": 3.5771050453186035,
+      "actual_points_current_gw": 0.0,
+      "predicted_points_planning_horizon": 20.21697163581848,
+      "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
     },
     {
       "element": 211.0,
@@ -89,19 +88,6 @@
       "predicted_points_current_gw": 3.485135078430176,
       "actual_points_current_gw": 8.0,
       "predicted_points_planning_horizon": 24.123666524887085,
-      "is_starting": 0.0,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 6.0,
-      "name": "Jurri\u00ebn Timber",
-      "position": "DEF",
-      "team": "Arsenal",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.4581527709960938,
-      "actual_points_current_gw": 7.0,
-      "predicted_points_planning_horizon": 23.70187997817993,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -130,7 +116,7 @@
       "predicted_points_planning_horizon": 31.560792446136475,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 110.0,
@@ -185,19 +171,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 71.0,
-      "name": "Justin Kluivert",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0,
-      "predicted_points_current_gw": 4.586281776428223,
-      "actual_points_current_gw": 0.0,
-      "predicted_points_planning_horizon": 17.26203417778015,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 99.0,
       "name": "Bryan Mbeumo",
       "position": "MID",
@@ -232,6 +205,19 @@
       "predicted_points_current_gw": 4.088441848754883,
       "actual_points_current_gw": 6.0,
       "predicted_points_planning_horizon": 28.481181144714355,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 54.0,
+      "name": "Morgan Rogers",
+      "position": "MID",
+      "team": "Aston Villa",
+      "cost": 50.0,
+      "predicted_points_current_gw": 3.3322947025299072,
+      "actual_points_current_gw": 9.0,
+      "predicted_points_planning_horizon": 22.933118104934692,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -275,7 +261,7 @@
       "predicted_points_planning_horizon": 21.34104609489441,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 447.0,
@@ -301,7 +287,7 @@
       "predicted_points_planning_horizon": 31.560792446136475,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 110.0,
@@ -343,19 +329,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 71.0,
-      "name": "Justin Kluivert",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0,
-      "predicted_points_current_gw": 4.586281776428223,
-      "actual_points_current_gw": 0.0,
-      "predicted_points_planning_horizon": 17.26203417778015,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 99.0,
       "name": "Bryan Mbeumo",
       "position": "MID",
@@ -377,6 +350,19 @@
       "predicted_points_current_gw": 4.102052211761475,
       "actual_points_current_gw": 1.0,
       "predicted_points_planning_horizon": 27.641411781311035,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 182.0,
+      "name": "Cole Palmer",
+      "position": "MID",
+      "team": "Chelsea",
+      "cost": 105.0,
+      "predicted_points_current_gw": 4.088441848754883,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 28.481181144714355,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0

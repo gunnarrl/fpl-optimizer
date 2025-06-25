@@ -23,9 +23,9 @@
       "cost": 60.0
     }
   ],
-  "total_predicted_points_current_gw": 57.301005363464355,
+  "total_predicted_points_current_gw": 57.16662263870239,
   "total_actual_points_current_gw": 74.0,
-  "total_predicted_points_planning_horizon": 367.52411222457886,
+  "total_predicted_points_planning_horizon": 368.17595171928406,
   "squad": [
     {
       "element": 495.0,
@@ -38,7 +38,7 @@
       "predicted_points_planning_horizon": 18.048775911331177,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 350.0,
@@ -54,19 +54,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 238.0,
-      "name": "Ashley Young",
-      "position": "DEF",
-      "team": "Everton",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.667876720428467,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 14.93596363067627,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 267.0,
       "name": "Leif Davis",
       "position": "DEF",
@@ -75,19 +62,32 @@
       "predicted_points_current_gw": 2.533493995666504,
       "actual_points_current_gw": 1.0,
       "predicted_points_planning_horizon": 15.474764108657837,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 255.0,
+      "name": "Antonee Robinson",
+      "position": "DEF",
+      "team": "Fulham",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.442138671875,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 16.47535276412964,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 399.0,
-      "name": "Lewis Hall",
+      "element": 533.0,
+      "name": "Rayan A\u00eft-Nouri",
       "position": "DEF",
-      "team": "Newcastle",
+      "team": "Wolves",
       "cost": 45.0,
-      "predicted_points_current_gw": 2.5021965503692627,
+      "predicted_points_current_gw": 2.378417730331421,
       "actual_points_current_gw": 6.0,
-      "predicted_points_planning_horizon": 15.5251145362854,
+      "predicted_points_planning_horizon": 14.637564897537231,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -116,7 +116,7 @@
       "predicted_points_planning_horizon": 28.08199906349182,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 566.0,
@@ -235,7 +235,7 @@
       "predicted_points_planning_horizon": 18.048775911331177,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 350.0,
@@ -251,14 +251,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 238.0,
-      "name": "Ashley Young",
+      "element": 267.0,
+      "name": "Leif Davis",
       "position": "DEF",
-      "team": "Everton",
+      "team": "Ipswich",
       "cost": 45.0,
-      "predicted_points_current_gw": 2.667876720428467,
+      "predicted_points_current_gw": 2.533493995666504,
       "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 14.93596363067627,
+      "predicted_points_planning_horizon": 15.474764108657837,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -287,7 +287,7 @@
       "predicted_points_planning_horizon": 28.08199906349182,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 235.0,

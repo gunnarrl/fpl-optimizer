@@ -2,11 +2,9 @@
   "GW": 37,
   "transfers_made": 1,
   "points_hit": 0,
-  "bank": 105,
+  "bank": 135,
   "free_transfers": 1,
-  "chips_used": [
-    "triple_captain"
-  ],
+  "chips_used": [],
   "transfers_in": [
     {
       "element": 415.0,
@@ -25,9 +23,9 @@
       "cost": 60.0
     }
   ],
-  "total_predicted_points_current_gw": 53.51663517951965,
-  "total_actual_points_current_gw": 50.0,
-  "total_predicted_points_planning_horizon": 105.35622143745422,
+  "total_predicted_points_current_gw": 48.601235151290894,
+  "total_actual_points_current_gw": 45.0,
+  "total_predicted_points_planning_horizon": 105.55774784088135,
   "squad": [
     {
       "element": 339.0,
@@ -147,14 +145,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 443.0,
-      "name": "Matz Sels",
+      "element": 235.0,
+      "name": "Jordan Pickford",
       "position": "GK",
-      "team": "Nott'm Forest",
-      "cost": 45.0,
-      "predicted_points_current_gw": 3.1398513317108154,
-      "actual_points_current_gw": 3.0,
-      "predicted_points_planning_horizon": 6.240362167358398,
+      "team": "Everton",
+      "cost": 50.0,
+      "predicted_points_current_gw": 3.2103641033172607,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 6.4418885707855225,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -209,7 +207,7 @@
       "predicted_points_planning_horizon": 8.441007137298584,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 328.0,
@@ -222,7 +220,7 @@
       "predicted_points_planning_horizon": 6.92856502532959,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     }
   ],
   "starting_xi": [
@@ -354,7 +352,7 @@
       "predicted_points_planning_horizon": 8.441007137298584,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 328.0,
@@ -367,7 +365,7 @@
       "predicted_points_planning_horizon": 6.92856502532959,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     }
   ]
 }

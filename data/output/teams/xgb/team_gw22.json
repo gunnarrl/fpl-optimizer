@@ -23,9 +23,9 @@
       "cost": 45.0
     }
   ],
-  "total_predicted_points_current_gw": 61.43006777763367,
-  "total_actual_points_current_gw": 65.0,
-  "total_predicted_points_planning_horizon": 417.3826849460602,
+  "total_predicted_points_current_gw": 61.386385679244995,
+  "total_actual_points_current_gw": 67.0,
+  "total_predicted_points_planning_horizon": 417.61894130706787,
   "squad": [
     {
       "element": 311.0,
@@ -54,19 +54,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 399.0,
-      "name": "Lewis Hall",
-      "position": "DEF",
-      "team": "Newcastle",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.97575306892395,
-      "actual_points_current_gw": 4.0,
-      "predicted_points_planning_horizon": 17.826632261276245,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 339.0,
       "name": "Virgil van Dijk",
       "position": "DEF",
@@ -75,7 +62,7 @@
       "predicted_points_current_gw": 2.9320709705352783,
       "actual_points_current_gw": 6.0,
       "predicted_points_planning_horizon": 28.01992177963257,
-      "is_starting": 0.0,
+      "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -93,6 +80,19 @@
       "is_vice": 0.0
     },
     {
+      "element": 231.0,
+      "name": "Vitalii Mykolenko",
+      "position": "DEF",
+      "team": "Everton",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.5697529315948486,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 18.062888622283936,
+      "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
       "element": 401.0,
       "name": "Alexander Isak",
       "position": "FWD",
@@ -103,7 +103,7 @@
       "predicted_points_planning_horizon": 35.31088304519653,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 541.0,
@@ -181,7 +181,7 @@
       "predicted_points_planning_horizon": 60.22961473464966,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 182.0,
@@ -251,14 +251,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 399.0,
-      "name": "Lewis Hall",
+      "element": 339.0,
+      "name": "Virgil van Dijk",
       "position": "DEF",
-      "team": "Newcastle",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.97575306892395,
-      "actual_points_current_gw": 4.0,
-      "predicted_points_planning_horizon": 17.826632261276245,
+      "team": "Liverpool",
+      "cost": 60.0,
+      "predicted_points_current_gw": 2.9320709705352783,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 28.01992177963257,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -274,7 +274,7 @@
       "predicted_points_planning_horizon": 35.31088304519653,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 541.0,
@@ -326,7 +326,7 @@
       "predicted_points_planning_horizon": 60.22961473464966,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 182.0,

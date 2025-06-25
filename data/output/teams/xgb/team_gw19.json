@@ -23,9 +23,9 @@
       "cost": 55.0
     }
   ],
-  "total_predicted_points_current_gw": 64.2776038646698,
-  "total_actual_points_current_gw": 73.0,
-  "total_predicted_points_planning_horizon": 374.29206132888794,
+  "total_predicted_points_current_gw": 64.32987022399902,
+  "total_actual_points_current_gw": 65.0,
+  "total_predicted_points_planning_horizon": 372.97590613365173,
   "squad": [
     {
       "element": 350.0,
@@ -38,7 +38,7 @@
       "predicted_points_planning_horizon": 19.16340684890747,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 267.0,
@@ -54,15 +54,28 @@
       "is_vice": 0.0
     },
     {
-      "element": 399.0,
-      "name": "Lewis Hall",
+      "element": 255.0,
+      "name": "Antonee Robinson",
       "position": "DEF",
-      "team": "Newcastle",
+      "team": "Fulham",
       "cost": 45.0,
-      "predicted_points_current_gw": 2.451126337051392,
-      "actual_points_current_gw": 12.0,
-      "predicted_points_planning_horizon": 15.889448642730713,
+      "predicted_points_current_gw": 2.5033926963806152,
+      "actual_points_current_gw": 4.0,
+      "predicted_points_planning_horizon": 17.46955180168152,
       "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 533.0,
+      "name": "Rayan A\u00eft-Nouri",
+      "position": "DEF",
+      "team": "Wolves",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.454352617263794,
+      "actual_points_current_gw": 10.0,
+      "predicted_points_planning_horizon": 14.525381565093994,
+      "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -80,19 +93,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 238.0,
-      "name": "Ashley Young",
-      "position": "DEF",
-      "team": "Everton",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.426016092300415,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 17.421639919281006,
-      "is_starting": 0.0,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 541.0,
       "name": "Matheus Santos Carneiro Da Cunha",
       "position": "FWD",
@@ -103,7 +103,7 @@
       "predicted_points_planning_horizon": 28.69598937034607,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 401.0,
@@ -235,7 +235,7 @@
       "predicted_points_planning_horizon": 19.16340684890747,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 267.0,
@@ -251,14 +251,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 399.0,
-      "name": "Lewis Hall",
+      "element": 255.0,
+      "name": "Antonee Robinson",
       "position": "DEF",
-      "team": "Newcastle",
+      "team": "Fulham",
       "cost": 45.0,
-      "predicted_points_current_gw": 2.451126337051392,
-      "actual_points_current_gw": 12.0,
-      "predicted_points_planning_horizon": 15.889448642730713,
+      "predicted_points_current_gw": 2.5033926963806152,
+      "actual_points_current_gw": 4.0,
+      "predicted_points_planning_horizon": 17.46955180168152,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -274,7 +274,7 @@
       "predicted_points_planning_horizon": 28.69598937034607,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 401.0,

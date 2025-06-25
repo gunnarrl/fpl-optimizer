@@ -146,7 +146,7 @@ def create_initial_squad_json(player_names, starting_11, captain, vice_captain):
     }
 
     # Save the JSON file
-    file_path = "../../data/output/teams/team_gw1.json"
+    file_path = "../../data/output/teams/xgb/team_gw1.json"
     print(f"\nSaving initial squad for GW1 to {file_path}")
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, 'w') as f:

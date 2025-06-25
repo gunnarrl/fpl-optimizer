@@ -1,8 +1,8 @@
 {
   "GW": 13,
-  "transfers_made": 2,
-  "points_hit": 1,
-  "bank": 0,
+  "transfers_made": 3,
+  "points_hit": 2,
+  "bank": 5,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
@@ -19,9 +19,23 @@
       "position": "DEF",
       "team": "Wolves",
       "cost": 45.0
+    },
+    {
+      "element": 617.0,
+      "name": "Francisco Evanilson de Lima Barbosa",
+      "position": "FWD",
+      "team": "Bournemouth",
+      "cost": 60.0
     }
   ],
   "transfers_out": [
+    {
+      "element": 58.0,
+      "name": "Ollie Watkins",
+      "position": "FWD",
+      "team": "Aston Villa",
+      "cost": 90.0
+    },
     {
       "element": 230.0,
       "name": "Dwight McNeil",
@@ -37,9 +51,9 @@
       "cost": 70.0
     }
   ],
-  "total_predicted_points_current_gw": 52.56029987335205,
-  "total_actual_points_current_gw": 78.0,
-  "total_predicted_points_planning_horizon": 349.709534406662,
+  "total_predicted_points_current_gw": 52.81635141372681,
+  "total_actual_points_current_gw": 76.0,
+  "total_predicted_points_planning_horizon": 352.610737323761,
   "squad": [
     {
       "element": 350.0,
@@ -81,19 +95,6 @@
       "is_vice": true
     },
     {
-      "element": 339.0,
-      "name": "Virgil van Dijk",
-      "position": "DEF",
-      "team": "Liverpool",
-      "cost": 60.0,
-      "predicted_points_current_gw": 2.756521701812744,
-      "actual_points_current_gw": 6.0,
-      "predicted_points_planning_horizon": 17.71621084213257,
-      "is_starting": 0.0,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 533.0,
       "name": "Rayan A\u00eft-Nouri",
       "position": "DEF",
@@ -102,6 +103,19 @@
       "predicted_points_current_gw": 2.738370656967163,
       "actual_points_current_gw": 0.0,
       "predicted_points_planning_horizon": 15.43634819984436,
+      "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 255.0,
+      "name": "Antonee Robinson",
+      "position": "DEF",
+      "team": "Fulham",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.536283254623413,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 14.705711603164673,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -133,15 +147,28 @@
       "is_vice": 0.0
     },
     {
-      "element": 148.0,
-      "name": "Danny Welbeck",
+      "element": 617.0,
+      "name": "Francisco Evanilson de Lima Barbosa",
       "position": "FWD",
-      "team": "Brighton",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.2307345867156982,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 12.8763108253479,
+      "team": "Bournemouth",
+      "cost": 60.0,
+      "predicted_points_current_gw": 2.880348920822144,
+      "actual_points_current_gw": 12.0,
+      "predicted_points_planning_horizon": 19.935699701309204,
       "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 293.0,
+      "name": "Mads Hermansen",
+      "position": "GK",
+      "team": "Leicester",
+      "cost": 45.0,
+      "predicted_points_current_gw": 3.302133560180664,
+      "actual_points_current_gw": 0.0,
+      "predicted_points_planning_horizon": 16.56298804283142,
+      "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -154,19 +181,6 @@
       "predicted_points_current_gw": 3.046082019805908,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 17.03215742111206,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 235.0,
-      "name": "Jordan Pickford",
-      "position": "GK",
-      "team": "Everton",
-      "cost": 50.0,
-      "predicted_points_current_gw": 3.0423407554626465,
-      "actual_points_current_gw": 0.0,
-      "predicted_points_planning_horizon": 17.71067476272583,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -304,14 +318,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 91.0,
-      "name": "Mark Flekken",
+      "element": 293.0,
+      "name": "Mads Hermansen",
       "position": "GK",
-      "team": "Brentford",
+      "team": "Leicester",
       "cost": 45.0,
-      "predicted_points_current_gw": 3.046082019805908,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 17.03215742111206,
+      "predicted_points_current_gw": 3.302133560180664,
+      "actual_points_current_gw": 0.0,
+      "predicted_points_planning_horizon": 16.56298804283142,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0

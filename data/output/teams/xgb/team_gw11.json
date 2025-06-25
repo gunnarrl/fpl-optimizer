@@ -2,44 +2,31 @@
   "GW": 11,
   "transfers_made": 1,
   "points_hit": 0,
-  "bank": 0,
+  "bank": 5,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
     {
-      "element": 339.0,
-      "name": "Virgil van Dijk",
+      "element": 267.0,
+      "name": "Leif Davis",
       "position": "DEF",
-      "team": "Liverpool",
-      "cost": 60.0
+      "team": "Ipswich",
+      "cost": 45.0
     }
   ],
   "transfers_out": [
-    {
-      "element": 498.0,
-      "name": "Cristian Romero",
-      "position": "DEF",
-      "team": "Spurs",
-      "cost": 50.0
-    }
-  ],
-  "total_predicted_points_current_gw": 50.47114610671997,
-  "total_actual_points_current_gw": 83.0,
-  "total_predicted_points_planning_horizon": 331.0115268230438,
-  "squad": [
     {
       "element": 3.0,
       "name": "Gabriel dos Santos Magalh\u00e3es",
       "position": "DEF",
       "team": "Arsenal",
-      "cost": 60.0,
-      "predicted_points_current_gw": 3.399353265762329,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 13.220812320709229,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
+      "cost": 60.0
+    }
+  ],
+  "total_predicted_points_current_gw": 50.43513059616089,
+  "total_actual_points_current_gw": 62.0,
+  "total_predicted_points_planning_horizon": 333.6163580417633,
+  "squad": [
     {
       "element": 350.0,
       "name": "Jo\u0161ko Gvardiol",
@@ -51,7 +38,7 @@
       "predicted_points_planning_horizon": 21.525386333465576,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 495.0,
@@ -75,20 +62,46 @@
       "predicted_points_current_gw": 2.82613205909729,
       "actual_points_current_gw": 1.0,
       "predicted_points_planning_horizon": 16.188390731811523,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 255.0,
+      "name": "Antonee Robinson",
+      "position": "DEF",
+      "team": "Fulham",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.598296642303467,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 15.049655199050903,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 339.0,
-      "name": "Virgil van Dijk",
+      "element": 267.0,
+      "name": "Leif Davis",
       "position": "DEF",
-      "team": "Liverpool",
-      "cost": 60.0,
-      "predicted_points_current_gw": 2.7927677631378174,
-      "actual_points_current_gw": 6.0,
-      "predicted_points_planning_horizon": 17.67331290245056,
+      "team": "Ipswich",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.379892587661743,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 16.60082244873047,
       "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 58.0,
+      "name": "Ollie Watkins",
+      "position": "FWD",
+      "team": "Aston Villa",
+      "cost": 90.0,
+      "predicted_points_current_gw": 4.357265472412109,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 24.193115234375,
+      "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -101,19 +114,6 @@
       "predicted_points_current_gw": 3.718747615814209,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 21.043880939483643,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 541.0,
-      "name": "Matheus Santos Carneiro Da Cunha",
-      "position": "FWD",
-      "team": "Wolves",
-      "cost": 65.0,
-      "predicted_points_current_gw": 3.617388963699341,
-      "actual_points_current_gw": 12.0,
-      "predicted_points_planning_horizon": 22.561550617218018,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -132,19 +132,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 235.0,
-      "name": "Jordan Pickford",
-      "position": "GK",
-      "team": "Everton",
-      "cost": 50.0,
-      "predicted_points_current_gw": 3.115748643875122,
-      "actual_points_current_gw": 11.0,
-      "predicted_points_planning_horizon": 17.803104639053345,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 91.0,
       "name": "Mark Flekken",
       "position": "GK",
@@ -153,6 +140,19 @@
       "predicted_points_current_gw": 2.9130778312683105,
       "actual_points_current_gw": 1.0,
       "predicted_points_planning_horizon": 17.544675588607788,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 293.0,
+      "name": "Mads Hermansen",
+      "position": "GK",
+      "team": "Leicester",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.8881397247314453,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 18.020018815994263,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -181,7 +181,7 @@
       "predicted_points_planning_horizon": 22.201873064041138,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 99.0,
@@ -225,19 +225,6 @@
   ],
   "starting_xi": [
     {
-      "element": 3.0,
-      "name": "Gabriel dos Santos Magalh\u00e3es",
-      "position": "DEF",
-      "team": "Arsenal",
-      "cost": 60.0,
-      "predicted_points_current_gw": 3.399353265762329,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 13.220812320709229,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 350.0,
       "name": "Jo\u0161ko Gvardiol",
       "position": "DEF",
@@ -248,7 +235,7 @@
       "predicted_points_planning_horizon": 21.525386333465576,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 495.0,
@@ -259,6 +246,32 @@
       "predicted_points_current_gw": 3.222556829452514,
       "actual_points_current_gw": 4.0,
       "predicted_points_planning_horizon": 18.5090811252594,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
+      "position": "DEF",
+      "team": "Liverpool",
+      "cost": 70.0,
+      "predicted_points_current_gw": 2.82613205909729,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 16.188390731811523,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 58.0,
+      "name": "Ollie Watkins",
+      "position": "FWD",
+      "team": "Aston Villa",
+      "cost": 90.0,
+      "predicted_points_current_gw": 4.357265472412109,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 24.193115234375,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -277,27 +290,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 541.0,
-      "name": "Matheus Santos Carneiro Da Cunha",
-      "position": "FWD",
-      "team": "Wolves",
-      "cost": 65.0,
-      "predicted_points_current_gw": 3.617388963699341,
-      "actual_points_current_gw": 12.0,
-      "predicted_points_planning_horizon": 22.561550617218018,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 235.0,
-      "name": "Jordan Pickford",
+      "element": 91.0,
+      "name": "Mark Flekken",
       "position": "GK",
-      "team": "Everton",
-      "cost": 50.0,
-      "predicted_points_current_gw": 3.115748643875122,
-      "actual_points_current_gw": 11.0,
-      "predicted_points_planning_horizon": 17.803104639053345,
+      "team": "Brentford",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.9130778312683105,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 17.544675588607788,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -326,7 +326,7 @@
       "predicted_points_planning_horizon": 22.201873064041138,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 99.0,

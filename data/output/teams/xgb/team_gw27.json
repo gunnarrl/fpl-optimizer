@@ -39,7 +39,7 @@
   ],
   "total_predicted_points_current_gw": 67.20231485366821,
   "total_actual_points_current_gw": 57.0,
-  "total_predicted_points_planning_horizon": 379.0376181602478,
+  "total_predicted_points_planning_horizon": 382.162930727005,
   "squad": [
     {
       "element": 311.0,
@@ -52,7 +52,7 @@
       "predicted_points_planning_horizon": 19.99985408782959,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 339.0,
@@ -208,7 +208,7 @@
       "predicted_points_planning_horizon": 29.40713930130005,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 9.0,
@@ -224,14 +224,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 89.0,
-      "name": "Mikkel Damsgaard",
+      "element": 54.0,
+      "name": "Morgan Rogers",
       "position": "MID",
-      "team": "Brentford",
+      "team": "Aston Villa",
       "cost": 50.0,
-      "predicted_points_current_gw": 3.7549149990081774,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 19.81758737564087,
+      "predicted_points_current_gw": 3.149243354797364,
+      "actual_points_current_gw": 7.0,
+      "predicted_points_planning_horizon": 22.94289994239807,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -249,7 +249,7 @@
       "predicted_points_planning_horizon": 19.99985408782959,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 339.0,
@@ -366,7 +366,7 @@
       "predicted_points_planning_horizon": 29.40713930130005,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 9.0,

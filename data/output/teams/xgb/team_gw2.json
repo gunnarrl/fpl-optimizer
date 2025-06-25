@@ -5,7 +5,7 @@
   "bank": 5,
   "free_transfers": 1,
   "chips_used": [
-    "triple_captain"
+    "bench_boost"
   ],
   "transfers_in": [
     {
@@ -81,8 +81,8 @@
       "cost": 45.0
     }
   ],
-  "total_predicted_points_current_gw": 62.02476906776428,
-  "total_actual_points_current_gw": 78.0,
+  "total_predicted_points_current_gw": 67.77630567550659,
+  "total_actual_points_current_gw": 80.0,
   "total_predicted_points_planning_horizon": 321.74622082710266,
   "squad": [
     {
@@ -122,7 +122,7 @@
       "predicted_points_planning_horizon": 15.569051742553711,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 350.0,
@@ -133,7 +133,7 @@
       "predicted_points_current_gw": 3.111157178878784,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 18.372612237930298,
-      "is_starting": 0.0,
+      "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -172,7 +172,7 @@
       "predicted_points_current_gw": 3.600722074508667,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 23.18417263031006,
-      "is_starting": true,
+      "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -185,7 +185,7 @@
       "predicted_points_current_gw": 3.585251569747925,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 17.616057634353638,
-      "is_starting": 0.0,
+      "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -198,7 +198,7 @@
       "predicted_points_current_gw": 3.383519411087036,
       "actual_points_current_gw": 3.0,
       "predicted_points_planning_horizon": 17.79505705833435,
-      "is_starting": true,
+      "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -211,7 +211,7 @@
       "predicted_points_current_gw": 2.9342098236083984,
       "actual_points_current_gw": 6.0,
       "predicted_points_planning_horizon": 14.16592526435852,
-      "is_starting": 0.0,
+      "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -252,7 +252,7 @@
       "predicted_points_planning_horizon": 28.431232452392578,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 99.0,
@@ -276,7 +276,7 @@
       "predicted_points_current_gw": 3.79753041267395,
       "actual_points_current_gw": 5.0,
       "predicted_points_planning_horizon": 19.14954900741577,
-      "is_starting": true,
+      "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     }
@@ -319,7 +319,20 @@
       "predicted_points_planning_horizon": 15.569051742553711,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
+    },
+    {
+      "element": 350.0,
+      "name": "Jo\u0161ko Gvardiol",
+      "position": "DEF",
+      "team": "Man City",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.111157178878784,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 18.372612237930298,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
     },
     {
       "element": 447.0,
@@ -335,27 +348,27 @@
       "is_vice": 0.0
     },
     {
-      "element": 4.0,
-      "name": "Kai Havertz",
+      "element": 110.0,
+      "name": "Yoane Wissa",
       "position": "FWD",
-      "team": "Arsenal",
-      "cost": 80.0,
-      "predicted_points_current_gw": 3.600722074508667,
+      "team": "Brentford",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.585251569747925,
       "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 23.18417263031006,
+      "predicted_points_planning_horizon": 17.616057634353638,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 91.0,
-      "name": "Mark Flekken",
+      "element": 443.0,
+      "name": "Matz Sels",
       "position": "GK",
-      "team": "Brentford",
+      "team": "Nott'm Forest",
       "cost": 45.0,
-      "predicted_points_current_gw": 3.383519411087036,
-      "actual_points_current_gw": 3.0,
-      "predicted_points_planning_horizon": 17.79505705833435,
+      "predicted_points_current_gw": 2.9342098236083984,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 14.16592526435852,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -397,7 +410,7 @@
       "predicted_points_planning_horizon": 28.431232452392578,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 99.0,
@@ -408,19 +421,6 @@
       "predicted_points_current_gw": 4.317603588104248,
       "actual_points_current_gw": 1.0,
       "predicted_points_planning_horizon": 23.44365429878235,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 78.0,
-      "name": "Antoine Semenyo",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.79753041267395,
-      "actual_points_current_gw": 5.0,
-      "predicted_points_planning_horizon": 19.14954900741577,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0

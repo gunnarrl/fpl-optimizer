@@ -1,18 +1,11 @@
 {
   "GW": 28,
-  "transfers_made": 2,
-  "points_hit": 1,
-  "bank": 5,
+  "transfers_made": 1,
+  "points_hit": 0,
+  "bank": 10,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
-    {
-      "element": 71.0,
-      "name": "Justin Kluivert",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0
-    },
     {
       "element": 207.0,
       "name": "Jean-Philippe Mateta",
@@ -23,13 +16,6 @@
   ],
   "transfers_out": [
     {
-      "element": 89.0,
-      "name": "Mikkel Damsgaard",
-      "position": "MID",
-      "team": "Brentford",
-      "cost": 50.0
-    },
-    {
       "element": 401.0,
       "name": "Alexander Isak",
       "position": "FWD",
@@ -39,7 +25,7 @@
   ],
   "total_predicted_points_current_gw": 57.42243051528931,
   "total_actual_points_current_gw": 52.0,
-  "total_predicted_points_planning_horizon": 387.44115471839905,
+  "total_predicted_points_planning_horizon": 384.27704429626465,
   "squad": [
     {
       "element": 311.0,
@@ -117,7 +103,7 @@
       "predicted_points_planning_horizon": 24.24130392074585,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 110.0,
@@ -156,7 +142,7 @@
       "predicted_points_planning_horizon": 20.06057858467102,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 201.0,
@@ -224,14 +210,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 71.0,
-      "name": "Justin Kluivert",
+      "element": 54.0,
+      "name": "Morgan Rogers",
       "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.4958510398864746,
-      "actual_points_current_gw": 5.0,
-      "predicted_points_planning_horizon": 26.056405782699585,
+      "team": "Aston Villa",
+      "cost": 50.0,
+      "predicted_points_current_gw": 3.366642713546753,
+      "actual_points_current_gw": 3.0,
+      "predicted_points_planning_horizon": 22.892295360565186,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -288,7 +274,7 @@
       "predicted_points_planning_horizon": 24.24130392074585,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 110.0,
@@ -327,7 +313,7 @@
       "predicted_points_planning_horizon": 20.06057858467102,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 328.0,

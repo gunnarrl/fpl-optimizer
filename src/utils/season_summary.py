@@ -75,6 +75,6 @@ if __name__ == "__main__":
     # 1. Make sure your CSV file is in the same directory as this script,
     #    or provide the full path to the file.
     # 2. Replace 'your_fpl_data.csv' with the actual name of your file.
-    csv_file_name = '../../data/output/teams/season_metrics.csv'
+    csv_file_name = '../../data/output/teams/autoGluon/season_metrics.csv'
 
     summarize_fpl_season(csv_file_name)

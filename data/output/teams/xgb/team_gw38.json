@@ -2,7 +2,7 @@
   "GW": 38,
   "transfers_made": 2,
   "points_hit": 1,
-  "bank": 160,
+  "bank": 185,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
@@ -39,7 +39,7 @@
   ],
   "total_predicted_points_current_gw": 48.500458002090454,
   "total_actual_points_current_gw": 62.0,
-  "total_predicted_points_planning_horizon": 53.616586446762085,
+  "total_predicted_points_planning_horizon": 53.747600078582764,
   "squad": [
     {
       "element": 339.0,
@@ -159,14 +159,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 443.0,
-      "name": "Matz Sels",
+      "element": 235.0,
+      "name": "Jordan Pickford",
       "position": "GK",
-      "team": "Nott'm Forest",
-      "cost": 45.0,
-      "predicted_points_current_gw": 3.100510835647583,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 3.100510835647583,
+      "team": "Everton",
+      "cost": 50.0,
+      "predicted_points_current_gw": 3.2315244674682617,
+      "actual_points_current_gw": 11.0,
+      "predicted_points_planning_horizon": 3.2315244674682617,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0

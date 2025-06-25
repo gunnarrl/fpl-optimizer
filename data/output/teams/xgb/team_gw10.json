@@ -2,16 +2,16 @@
   "GW": 10,
   "transfers_made": 1,
   "points_hit": 0,
-  "bank": 5,
+  "bank": 0,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
     {
-      "element": 541.0,
-      "name": "Matheus Santos Carneiro Da Cunha",
+      "element": 58.0,
+      "name": "Ollie Watkins",
       "position": "FWD",
-      "team": "Wolves",
-      "cost": 65.0
+      "team": "Aston Villa",
+      "cost": 90.0
     }
   ],
   "transfers_out": [
@@ -23,9 +23,9 @@
       "cost": 80.0
     }
   ],
-  "total_predicted_points_current_gw": 54.184141635894775,
-  "total_actual_points_current_gw": 55.0,
-  "total_predicted_points_planning_horizon": 336.2335240840912,
+  "total_predicted_points_current_gw": 54.43476843833923,
+  "total_actual_points_current_gw": 53.0,
+  "total_predicted_points_planning_horizon": 339.1267628669739,
   "squad": [
     {
       "element": 311.0,
@@ -80,27 +80,27 @@
       "is_vice": 0.0
     },
     {
-      "element": 498.0,
-      "name": "Cristian Romero",
+      "element": 255.0,
+      "name": "Antonee Robinson",
       "position": "DEF",
-      "team": "Spurs",
-      "cost": 50.0,
-      "predicted_points_current_gw": 2.520527601242065,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 14.468032121658325,
+      "team": "Fulham",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.7159206867218018,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 15.36972975730896,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 541.0,
-      "name": "Matheus Santos Carneiro Da Cunha",
+      "element": 58.0,
+      "name": "Ollie Watkins",
       "position": "FWD",
-      "team": "Wolves",
-      "cost": 65.0,
-      "predicted_points_current_gw": 3.5976240634918213,
-      "actual_points_current_gw": 6.0,
-      "predicted_points_planning_horizon": 22.344553232192993,
+      "team": "Aston Villa",
+      "cost": 90.0,
+      "predicted_points_current_gw": 4.47935152053833,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 24.882703065872192,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -132,19 +132,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 235.0,
-      "name": "Jordan Pickford",
-      "position": "GK",
-      "team": "Everton",
-      "cost": 50.0,
-      "predicted_points_current_gw": 3.5548336505889893,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 18.46705913543701,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 91.0,
       "name": "Mark Flekken",
       "position": "GK",
@@ -153,6 +140,19 @@
       "predicted_points_current_gw": 2.9237329959869385,
       "actual_points_current_gw": 4.0,
       "predicted_points_planning_horizon": 17.58043932914734,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 293.0,
+      "name": "Mads Hermansen",
+      "position": "GK",
+      "team": "Leicester",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.6246769428253174,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 17.920450448989868,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -194,7 +194,7 @@
       "predicted_points_planning_horizon": 35.83161544799805,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 230.0,
@@ -207,7 +207,7 @@
       "predicted_points_planning_horizon": 24.40989065170288,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 99.0,
@@ -264,14 +264,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 541.0,
-      "name": "Matheus Santos Carneiro Da Cunha",
+      "element": 58.0,
+      "name": "Ollie Watkins",
       "position": "FWD",
-      "team": "Wolves",
-      "cost": 65.0,
-      "predicted_points_current_gw": 3.5976240634918213,
-      "actual_points_current_gw": 6.0,
-      "predicted_points_planning_horizon": 22.344553232192993,
+      "team": "Aston Villa",
+      "cost": 90.0,
+      "predicted_points_current_gw": 4.47935152053833,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 24.882703065872192,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -290,14 +290,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 235.0,
-      "name": "Jordan Pickford",
+      "element": 91.0,
+      "name": "Mark Flekken",
       "position": "GK",
-      "team": "Everton",
-      "cost": 50.0,
-      "predicted_points_current_gw": 3.5548336505889893,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 18.46705913543701,
+      "team": "Brentford",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.9237329959869385,
+      "actual_points_current_gw": 4.0,
+      "predicted_points_planning_horizon": 17.58043932914734,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -339,7 +339,7 @@
       "predicted_points_planning_horizon": 35.83161544799805,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 230.0,
@@ -352,7 +352,7 @@
       "predicted_points_planning_horizon": 24.40989065170288,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 99.0,

@@ -2,7 +2,7 @@
   "GW": 34,
   "transfers_made": 2,
   "points_hit": 1,
-  "bank": 5,
+  "bank": 60,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
@@ -23,23 +23,23 @@
   ],
   "transfers_out": [
     {
-      "element": 6.0,
-      "name": "Jurri\u00ebn Timber",
-      "position": "DEF",
-      "team": "Arsenal",
-      "cost": 55.0
-    },
-    {
       "element": 23.0,
       "name": "Leandro Trossard",
       "position": "MID",
       "team": "Arsenal",
       "cost": 70.0
+    },
+    {
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
+      "position": "DEF",
+      "team": "Liverpool",
+      "cost": 70.0
     }
   ],
-  "total_predicted_points_current_gw": 60.413543462753296,
-  "total_actual_points_current_gw": 63.0,
-  "total_predicted_points_planning_horizon": 289.0213613510132,
+  "total_predicted_points_current_gw": 60.790308475494385,
+  "total_actual_points_current_gw": 46.0,
+  "total_predicted_points_planning_horizon": 289.64712381362915,
   "squad": [
     {
       "element": 339.0,
@@ -52,7 +52,7 @@
       "predicted_points_planning_horizon": 18.55127501487732,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 350.0,
@@ -133,27 +133,27 @@
       "is_vice": 0.0
     },
     {
-      "element": 58.0,
-      "name": "Ollie Watkins",
+      "element": 447.0,
+      "name": "Chris Wood",
       "position": "FWD",
-      "team": "Aston Villa",
-      "cost": 90.0,
-      "predicted_points_current_gw": 4.110912322998047,
-      "actual_points_current_gw": 9.0,
-      "predicted_points_planning_horizon": 15.788077354431152,
+      "team": "Nott'm Forest",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.97538423538208,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 19.07788586616516,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 443.0,
-      "name": "Matz Sels",
+      "element": 15.0,
+      "name": "David Raya Martin",
       "position": "GK",
-      "team": "Nott'm Forest",
-      "cost": 45.0,
-      "predicted_points_current_gw": 3.412123680114746,
+      "team": "Arsenal",
+      "cost": 55.0,
+      "predicted_points_current_gw": 3.5687501430511475,
       "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 15.800257444381714,
+      "predicted_points_planning_horizon": 13.538729667663574,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -208,17 +208,17 @@
       "predicted_points_planning_horizon": 22.556002378463745,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
-      "element": 199.0,
-      "name": "Eberechi Eze",
+      "element": 585.0,
+      "name": "Isma\u00efla Sarr",
       "position": "MID",
       "team": "Crystal Palace",
-      "cost": 70.0,
-      "predicted_points_current_gw": 4.010430335998535,
-      "actual_points_current_gw": 16.0,
-      "predicted_points_planning_horizon": 17.180974006652832,
+      "cost": 60.0,
+      "predicted_points_current_gw": 4.3660969734191895,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 16.77845573425293,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -249,7 +249,7 @@
       "predicted_points_planning_horizon": 18.55127501487732,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 350.0,
@@ -304,27 +304,27 @@
       "is_vice": 0.0
     },
     {
-      "element": 58.0,
-      "name": "Ollie Watkins",
+      "element": 447.0,
+      "name": "Chris Wood",
       "position": "FWD",
-      "team": "Aston Villa",
-      "cost": 90.0,
-      "predicted_points_current_gw": 4.110912322998047,
-      "actual_points_current_gw": 9.0,
-      "predicted_points_planning_horizon": 15.788077354431152,
+      "team": "Nott'm Forest",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.97538423538208,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 19.07788586616516,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 443.0,
-      "name": "Matz Sels",
+      "element": 15.0,
+      "name": "David Raya Martin",
       "position": "GK",
-      "team": "Nott'm Forest",
-      "cost": 45.0,
-      "predicted_points_current_gw": 3.412123680114746,
+      "team": "Arsenal",
+      "cost": 55.0,
+      "predicted_points_current_gw": 3.5687501430511475,
       "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 15.800257444381714,
+      "predicted_points_planning_horizon": 13.538729667663574,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -366,17 +366,17 @@
       "predicted_points_planning_horizon": 22.556002378463745,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
-      "element": 199.0,
-      "name": "Eberechi Eze",
+      "element": 585.0,
+      "name": "Isma\u00efla Sarr",
       "position": "MID",
       "team": "Crystal Palace",
-      "cost": 70.0,
-      "predicted_points_current_gw": 4.010430335998535,
-      "actual_points_current_gw": 16.0,
-      "predicted_points_planning_horizon": 17.180974006652832,
+      "cost": 60.0,
+      "predicted_points_current_gw": 4.3660969734191895,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 16.77845573425293,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0

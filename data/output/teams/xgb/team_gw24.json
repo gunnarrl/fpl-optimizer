@@ -23,9 +23,9 @@
       "cost": 50.0
     }
   ],
-  "total_predicted_points_current_gw": 77.88219165802002,
-  "total_actual_points_current_gw": 122.0,
-  "total_predicted_points_planning_horizon": 419.30160546302795,
+  "total_predicted_points_current_gw": 79.7411093711853,
+  "total_actual_points_current_gw": 127.0,
+  "total_predicted_points_planning_horizon": 418.8618538379669,
   "squad": [
     {
       "element": 311.0,
@@ -51,6 +51,19 @@
       "predicted_points_planning_horizon": 28.622674465179443,
       "is_starting": true,
       "is_captain": 0.0,
+      "is_vice": true
+    },
+    {
+      "element": 231.0,
+      "name": "Vitalii Mykolenko",
+      "position": "DEF",
+      "team": "Everton",
+      "cost": 45.0,
+      "predicted_points_current_gw": 5.330070972442627,
+      "actual_points_current_gw": 7.0,
+      "predicted_points_planning_horizon": 17.669086694717407,
+      "is_starting": true,
+      "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
@@ -62,7 +75,7 @@
       "predicted_points_current_gw": 3.471153259277344,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 20.636024475097656,
-      "is_starting": true,
+      "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -75,19 +88,6 @@
       "predicted_points_current_gw": 3.43633770942688,
       "actual_points_current_gw": 4.0,
       "predicted_points_planning_horizon": 19.46055841445923,
-      "is_starting": 0.0,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 399.0,
-      "name": "Lewis Hall",
-      "position": "DEF",
-      "team": "Newcastle",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.866530656814575,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 18.108838319778442,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -142,7 +142,7 @@
       "predicted_points_planning_horizon": 22.301451444625854,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 443.0,
@@ -248,17 +248,17 @@
       "predicted_points_planning_horizon": 28.622674465179443,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
-      "element": 3.0,
-      "name": "Gabriel dos Santos Magalh\u00e3es",
+      "element": 231.0,
+      "name": "Vitalii Mykolenko",
       "position": "DEF",
-      "team": "Arsenal",
-      "cost": 60.0,
-      "predicted_points_current_gw": 3.471153259277344,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 20.636024475097656,
+      "team": "Everton",
+      "cost": 45.0,
+      "predicted_points_current_gw": 5.330070972442627,
+      "actual_points_current_gw": 7.0,
+      "predicted_points_planning_horizon": 17.669086694717407,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -313,7 +313,7 @@
       "predicted_points_planning_horizon": 22.301451444625854,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 328.0,

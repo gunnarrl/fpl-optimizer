@@ -18,7 +18,7 @@ class FPLOptimizer:
         # Default configuration
         self.config = {
             'data_dir': os.path.abspath(os.path.join(__file__, "..", "..", "..", "data")),
-            'predictions_file': 'predictions_autogluon_parallel.csv',
+            'predictions_file': 'koa_predictions_updated.csv',
             'output_dir': 'teams',
             'planning_horizon': 6,
             'budget': 1000,

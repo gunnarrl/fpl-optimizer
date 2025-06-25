@@ -1,8 +1,8 @@
 {
   "GW": 32,
-  "transfers_made": 3,
-  "points_hit": 2,
-  "bank": 0,
+  "transfers_made": 1,
+  "points_hit": 0,
+  "bank": 10,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
@@ -12,48 +12,20 @@
       "position": "DEF",
       "team": "Arsenal",
       "cost": 60.0
-    },
-    {
-      "element": 58.0,
-      "name": "Ollie Watkins",
-      "position": "FWD",
-      "team": "Aston Villa",
-      "cost": 90.0
-    },
-    {
-      "element": 199.0,
-      "name": "Eberechi Eze",
-      "position": "MID",
-      "team": "Crystal Palace",
-      "cost": 70.0
     }
   ],
   "transfers_out": [
     {
-      "element": 182.0,
-      "name": "Cole Palmer",
-      "position": "MID",
-      "team": "Chelsea",
-      "cost": 105.0
-    },
-    {
-      "element": 207.0,
-      "name": "Jean-Philippe Mateta",
-      "position": "FWD",
-      "team": "Crystal Palace",
-      "cost": 75.0
-    },
-    {
-      "element": 573.0,
-      "name": "Nikola Milenkovi\u0107",
+      "element": 3.0,
+      "name": "Gabriel dos Santos Magalh\u00e3es",
       "position": "DEF",
-      "team": "Nott'm Forest",
-      "cost": 45.0
+      "team": "Arsenal",
+      "cost": 60.0
     }
   ],
-  "total_predicted_points_current_gw": 66.12566018104553,
-  "total_actual_points_current_gw": 83.0,
-  "total_predicted_points_planning_horizon": 377.5964844226837,
+  "total_predicted_points_current_gw": 64.28905773162842,
+  "total_actual_points_current_gw": 62.0,
+  "total_predicted_points_planning_horizon": 374.2840461730957,
   "squad": [
     {
       "element": 211.0,
@@ -82,6 +54,19 @@
       "is_vice": 0.0
     },
     {
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
+      "position": "DEF",
+      "team": "Liverpool",
+      "cost": 70.0,
+      "predicted_points_current_gw": 3.740579128265381,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 16.639866590499878,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
       "element": 339.0,
       "name": "Virgil van Dijk",
       "position": "DEF",
@@ -90,19 +75,6 @@
       "predicted_points_current_gw": 3.682451486587525,
       "actual_points_current_gw": 7.0,
       "predicted_points_planning_horizon": 22.46663498878479,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": true
-    },
-    {
-      "element": 6.0,
-      "name": "Jurri\u00ebn Timber",
-      "position": "DEF",
-      "team": "Arsenal",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.313932180404663,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 17.12864637374878,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -121,14 +93,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 58.0,
-      "name": "Ollie Watkins",
+      "element": 207.0,
+      "name": "Jean-Philippe Mateta",
       "position": "FWD",
-      "team": "Aston Villa",
-      "cost": 90.0,
-      "predicted_points_current_gw": 7.684111595153809,
-      "actual_points_current_gw": 12.0,
-      "predicted_points_planning_horizon": 27.135985851287842,
+      "team": "Crystal Palace",
+      "cost": 75.0,
+      "predicted_points_current_gw": 7.402266979217529,
+      "actual_points_current_gw": 10.0,
+      "predicted_points_planning_horizon": 21.9223690032959,
       "is_starting": true,
       "is_captain": true,
       "is_vice": 0.0
@@ -160,19 +132,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 201.0,
-      "name": "Dean Henderson",
-      "position": "GK",
-      "team": "Crystal Palace",
-      "cost": 45.0,
-      "predicted_points_current_gw": 4.802680492401123,
-      "actual_points_current_gw": 10.0,
-      "predicted_points_planning_horizon": 21.021565198898315,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 443.0,
       "name": "Matz Sels",
       "position": "GK",
@@ -181,7 +140,33 @@
       "predicted_points_current_gw": 3.4492721557617188,
       "actual_points_current_gw": 3.0,
       "predicted_points_planning_horizon": 19.64648699760437,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": true
+    },
+    {
+      "element": 15.0,
+      "name": "David Raya Martin",
+      "position": "GK",
+      "team": "Arsenal",
+      "cost": 55.0,
+      "predicted_points_current_gw": 3.339251756668091,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 24.375353574752808,
       "is_starting": 0.0,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 54.0,
+      "name": "Morgan Rogers",
+      "position": "MID",
+      "team": "Aston Villa",
+      "cost": 50.0,
+      "predicted_points_current_gw": 6.978311061859131,
+      "actual_points_current_gw": 7.0,
+      "predicted_points_planning_horizon": 23.72291326522827,
+      "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -199,27 +184,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 57.0,
-      "name": "Youri Tielemans",
-      "position": "MID",
-      "team": "Aston Villa",
-      "cost": 55.0,
-      "predicted_points_current_gw": 6.684117317199707,
-      "actual_points_current_gw": 9.0,
-      "predicted_points_planning_horizon": 23.88641929626465,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 199.0,
-      "name": "Eberechi Eze",
+      "element": 585.0,
+      "name": "Isma\u00efla Sarr",
       "position": "MID",
       "team": "Crystal Palace",
-      "cost": 70.0,
-      "predicted_points_current_gw": 6.678490161895752,
-      "actual_points_current_gw": 10.0,
-      "predicted_points_planning_horizon": 27.56385040283203,
+      "cost": 60.0,
+      "predicted_points_current_gw": 6.40666389465332,
+      "actual_points_current_gw": 3.0,
+      "predicted_points_planning_horizon": 26.763526439666748,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -279,27 +251,27 @@
       "is_vice": 0.0
     },
     {
-      "element": 339.0,
-      "name": "Virgil van Dijk",
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
       "position": "DEF",
       "team": "Liverpool",
-      "cost": 60.0,
-      "predicted_points_current_gw": 3.682451486587525,
-      "actual_points_current_gw": 7.0,
-      "predicted_points_planning_horizon": 22.46663498878479,
+      "cost": 70.0,
+      "predicted_points_current_gw": 3.740579128265381,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 16.639866590499878,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
-      "element": 58.0,
-      "name": "Ollie Watkins",
+      "element": 207.0,
+      "name": "Jean-Philippe Mateta",
       "position": "FWD",
-      "team": "Aston Villa",
-      "cost": 90.0,
-      "predicted_points_current_gw": 7.684111595153809,
-      "actual_points_current_gw": 12.0,
-      "predicted_points_planning_horizon": 27.135985851287842,
+      "team": "Crystal Palace",
+      "cost": 75.0,
+      "predicted_points_current_gw": 7.402266979217529,
+      "actual_points_current_gw": 10.0,
+      "predicted_points_planning_horizon": 21.9223690032959,
       "is_starting": true,
       "is_captain": true,
       "is_vice": 0.0
@@ -318,14 +290,27 @@
       "is_vice": 0.0
     },
     {
-      "element": 201.0,
-      "name": "Dean Henderson",
+      "element": 443.0,
+      "name": "Matz Sels",
       "position": "GK",
-      "team": "Crystal Palace",
+      "team": "Nott'm Forest",
       "cost": 45.0,
-      "predicted_points_current_gw": 4.802680492401123,
-      "actual_points_current_gw": 10.0,
-      "predicted_points_planning_horizon": 21.021565198898315,
+      "predicted_points_current_gw": 3.4492721557617188,
+      "actual_points_current_gw": 3.0,
+      "predicted_points_planning_horizon": 19.64648699760437,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": true
+    },
+    {
+      "element": 54.0,
+      "name": "Morgan Rogers",
+      "position": "MID",
+      "team": "Aston Villa",
+      "cost": 50.0,
+      "predicted_points_current_gw": 6.978311061859131,
+      "actual_points_current_gw": 7.0,
+      "predicted_points_planning_horizon": 23.72291326522827,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -344,27 +329,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 57.0,
-      "name": "Youri Tielemans",
-      "position": "MID",
-      "team": "Aston Villa",
-      "cost": 55.0,
-      "predicted_points_current_gw": 6.684117317199707,
-      "actual_points_current_gw": 9.0,
-      "predicted_points_planning_horizon": 23.88641929626465,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 199.0,
-      "name": "Eberechi Eze",
+      "element": 585.0,
+      "name": "Isma\u00efla Sarr",
       "position": "MID",
       "team": "Crystal Palace",
-      "cost": 70.0,
-      "predicted_points_current_gw": 6.678490161895752,
-      "actual_points_current_gw": 10.0,
-      "predicted_points_planning_horizon": 27.56385040283203,
+      "cost": 60.0,
+      "predicted_points_current_gw": 6.40666389465332,
+      "actual_points_current_gw": 3.0,
+      "predicted_points_planning_horizon": 26.763526439666748,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0

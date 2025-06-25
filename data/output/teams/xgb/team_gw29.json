@@ -2,16 +2,16 @@
   "GW": 29,
   "transfers_made": 1,
   "points_hit": 0,
-  "bank": 0,
+  "bank": 5,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
     {
-      "element": 6.0,
-      "name": "Jurri\u00ebn Timber",
+      "element": 350.0,
+      "name": "Jo\u0161ko Gvardiol",
       "position": "DEF",
-      "team": "Arsenal",
-      "cost": 55.0
+      "team": "Man City",
+      "cost": 60.0
     }
   ],
   "transfers_out": [
@@ -23,9 +23,9 @@
       "cost": 45.0
     }
   ],
-  "total_predicted_points_current_gw": 64.3700852394104,
-  "total_actual_points_current_gw": 38.0,
-  "total_predicted_points_planning_horizon": 383.42467856407166,
+  "total_predicted_points_current_gw": 63.02973008155823,
+  "total_actual_points_current_gw": 36.0,
+  "total_predicted_points_planning_horizon": 385.9946804046631,
   "squad": [
     {
       "element": 311.0,
@@ -51,6 +51,19 @@
       "predicted_points_planning_horizon": 21.907756328582764,
       "is_starting": true,
       "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 350.0,
+      "name": "Jo\u0161ko Gvardiol",
+      "position": "DEF",
+      "team": "Man City",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.4759647846221924,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 25.510526657104492,
+      "is_starting": true,
+      "is_captain": 0.0,
       "is_vice": true
     },
     {
@@ -62,7 +75,7 @@
       "predicted_points_current_gw": 3.443469762802124,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 24.726813316345215,
-      "is_starting": true,
+      "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -75,19 +88,6 @@
       "predicted_points_current_gw": 3.268476963043213,
       "actual_points_current_gw": 8.0,
       "predicted_points_planning_horizon": 21.02662491798401,
-      "is_starting": 0.0,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 6.0,
-      "name": "Jurri\u00ebn Timber",
-      "position": "DEF",
-      "team": "Arsenal",
-      "cost": 55.0,
-      "predicted_points_current_gw": 2.831395387649536,
-      "actual_points_current_gw": 9.0,
-      "predicted_points_planning_horizon": 23.3480966091156,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -127,7 +127,7 @@
       "predicted_points_current_gw": 3.9256703853607178,
       "actual_points_current_gw": 1.0,
       "predicted_points_planning_horizon": 31.607816696166992,
-      "is_starting": 0.0,
+      "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
@@ -184,19 +184,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 71.0,
-      "name": "Justin Kluivert",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0,
-      "predicted_points_current_gw": 5.298520565032959,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 22.56055474281311,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 182.0,
       "name": "Cole Palmer",
       "position": "MID",
@@ -219,6 +206,19 @@
       "actual_points_current_gw": 6.0,
       "predicted_points_planning_horizon": 28.839526653289795,
       "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 54.0,
+      "name": "Morgan Rogers",
+      "position": "MID",
+      "team": "Aston Villa",
+      "cost": 50.0,
+      "predicted_points_current_gw": 3.246423482894897,
+      "actual_points_current_gw": 10.0,
+      "predicted_points_planning_horizon": 22.96812653541565,
+      "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     }
@@ -248,20 +248,20 @@
       "predicted_points_planning_horizon": 21.907756328582764,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
-      "element": 211.0,
-      "name": "Daniel Mu\u00f1oz",
+      "element": 350.0,
+      "name": "Jo\u0161ko Gvardiol",
       "position": "DEF",
-      "team": "Crystal Palace",
-      "cost": 50.0,
-      "predicted_points_current_gw": 3.443469762802124,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 24.726813316345215,
+      "team": "Man City",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.4759647846221924,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 25.510526657104492,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 447.0,
@@ -285,6 +285,19 @@
       "predicted_points_current_gw": 4.328588485717773,
       "actual_points_current_gw": 8.0,
       "predicted_points_planning_horizon": 24.894628286361694,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 207.0,
+      "name": "Jean-Philippe Mateta",
+      "position": "FWD",
+      "team": "Crystal Palace",
+      "cost": 75.0,
+      "predicted_points_current_gw": 3.9256703853607178,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 31.607816696166992,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -324,19 +337,6 @@
       "predicted_points_current_gw": 7.949820518493652,
       "actual_points_current_gw": 6.0,
       "predicted_points_planning_horizon": 25.436229944229126,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 71.0,
-      "name": "Justin Kluivert",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0,
-      "predicted_points_current_gw": 5.298520565032959,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 22.56055474281311,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0

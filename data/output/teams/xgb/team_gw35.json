@@ -2,30 +2,30 @@
   "GW": 35,
   "transfers_made": 1,
   "points_hit": 0,
-  "bank": 40,
+  "bank": 80,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
     {
-      "element": 447.0,
-      "name": "Chris Wood",
-      "position": "FWD",
-      "team": "Nott'm Forest",
-      "cost": 60.0
+      "element": 514.0,
+      "name": "Jarrod Bowen",
+      "position": "MID",
+      "team": "West Ham",
+      "cost": 75.0
     }
   ],
   "transfers_out": [
     {
-      "element": 58.0,
-      "name": "Ollie Watkins",
-      "position": "FWD",
-      "team": "Aston Villa",
-      "cost": 90.0
+      "element": 585.0,
+      "name": "Isma\u00efla Sarr",
+      "position": "MID",
+      "team": "Crystal Palace",
+      "cost": 60.0
     }
   ],
   "total_predicted_points_current_gw": 59.328065156936646,
   "total_actual_points_current_gw": 45.0,
-  "total_predicted_points_planning_horizon": 227.4155774116516,
+  "total_predicted_points_planning_horizon": 228.4447956085205,
   "squad": [
     {
       "element": 339.0,
@@ -116,7 +116,7 @@
       "predicted_points_planning_horizon": 15.102501630783081,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 110.0,
@@ -129,7 +129,7 @@
       "predicted_points_planning_horizon": 19.26117706298828,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 91.0,
@@ -145,14 +145,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 443.0,
-      "name": "Matz Sels",
+      "element": 15.0,
+      "name": "David Raya Martin",
       "position": "GK",
-      "team": "Nott'm Forest",
-      "cost": 45.0,
-      "predicted_points_current_gw": 3.1668643951416016,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 12.388133764266968,
+      "team": "Arsenal",
+      "cost": 55.0,
+      "predicted_points_current_gw": 3.4326868057250977,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 9.969979524612427,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -210,14 +210,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 199.0,
-      "name": "Eberechi Eze",
+      "element": 514.0,
+      "name": "Jarrod Bowen",
       "position": "MID",
-      "team": "Crystal Palace",
-      "cost": 70.0,
-      "predicted_points_current_gw": 3.907100200653076,
-      "actual_points_current_gw": 16.0,
-      "predicted_points_planning_horizon": 13.170543670654297,
+      "team": "West Ham",
+      "cost": 75.0,
+      "predicted_points_current_gw": 4.164921283721924,
+      "actual_points_current_gw": 9.0,
+      "predicted_points_planning_horizon": 16.617916107177734,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -287,7 +287,7 @@
       "predicted_points_planning_horizon": 15.102501630783081,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 110.0,
@@ -300,7 +300,7 @@
       "predicted_points_planning_horizon": 19.26117706298828,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 91.0,

@@ -37,13 +37,6 @@
   ],
   "transfers_out": [
     {
-      "element": 267.0,
-      "name": "Leif Davis",
-      "position": "DEF",
-      "team": "Ipswich",
-      "cost": 45.0
-    },
-    {
       "element": 350.0,
       "name": "Jo\u0161ko Gvardiol",
       "position": "DEF",
@@ -58,6 +51,13 @@
       "cost": 85.0
     },
     {
+      "element": 533.0,
+      "name": "Rayan A\u00eft-Nouri",
+      "position": "DEF",
+      "team": "Wolves",
+      "cost": 45.0
+    },
+    {
       "element": 566.0,
       "name": "J\u00f8rgen Strand Larsen",
       "position": "FWD",
@@ -65,9 +65,9 @@
       "cost": 55.0
     }
   ],
-  "total_predicted_points_current_gw": 61.06280755996704,
-  "total_actual_points_current_gw": 51.0,
-  "total_predicted_points_planning_horizon": 402.2371988296509,
+  "total_predicted_points_current_gw": 61.372392892837524,
+  "total_actual_points_current_gw": 49.0,
+  "total_predicted_points_planning_horizon": 401.05315709114075,
   "squad": [
     {
       "element": 311.0,
@@ -93,30 +93,30 @@
       "predicted_points_planning_horizon": 27.306442975997925,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 399.0,
-      "name": "Lewis Hall",
-      "position": "DEF",
-      "team": "Newcastle",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.569227457046509,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 16.575385570526123,
-      "is_starting": true,
-      "is_captain": 0.0,
       "is_vice": true
     },
     {
-      "element": 238.0,
-      "name": "Ashley Young",
+      "element": 267.0,
+      "name": "Leif Davis",
       "position": "DEF",
-      "team": "Everton",
+      "team": "Ipswich",
       "cost": 45.0,
-      "predicted_points_current_gw": 2.483120918273926,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 17.562238931655884,
+      "predicted_points_current_gw": 2.878812789916992,
+      "actual_points_current_gw": 0.0,
+      "predicted_points_planning_horizon": 14.919849395751953,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 255.0,
+      "name": "Antonee Robinson",
+      "position": "DEF",
+      "team": "Fulham",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.804680347442627,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 18.033733367919922,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -290,20 +290,20 @@
       "predicted_points_planning_horizon": 27.306442975997925,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
-      "element": 399.0,
-      "name": "Lewis Hall",
+      "element": 267.0,
+      "name": "Leif Davis",
       "position": "DEF",
-      "team": "Newcastle",
+      "team": "Ipswich",
       "cost": 45.0,
-      "predicted_points_current_gw": 2.569227457046509,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 16.575385570526123,
+      "predicted_points_current_gw": 2.878812789916992,
+      "actual_points_current_gw": 0.0,
+      "predicted_points_planning_horizon": 14.919849395751953,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 541.0,

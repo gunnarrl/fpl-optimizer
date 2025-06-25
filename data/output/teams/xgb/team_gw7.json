@@ -1,45 +1,31 @@
 {
   "GW": 7,
-  "transfers_made": 2,
+  "transfers_made": 1,
   "points_hit": 0,
-  "bank": 5,
+  "bank": 0,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
     {
-      "element": 235.0,
-      "name": "Jordan Pickford",
-      "position": "GK",
-      "team": "Everton",
-      "cost": 50.0
-    },
-    {
-      "element": 498.0,
-      "name": "Cristian Romero",
+      "element": 255.0,
+      "name": "Antonee Robinson",
       "position": "DEF",
-      "team": "Spurs",
-      "cost": 50.0
+      "team": "Fulham",
+      "cost": 45.0
     }
   ],
   "transfers_out": [
     {
-      "element": 18.0,
-      "name": "William Saliba",
+      "element": 437.0,
+      "name": "Neco Williams",
       "position": "DEF",
-      "team": "Arsenal",
-      "cost": 60.0
-    },
-    {
-      "element": 443.0,
-      "name": "Matz Sels",
-      "position": "GK",
       "team": "Nott'm Forest",
       "cost": 45.0
     }
   ],
-  "total_predicted_points_current_gw": 46.85218691825867,
-  "total_actual_points_current_gw": 92.0,
-  "total_predicted_points_planning_horizon": 334.99373960494995,
+  "total_predicted_points_current_gw": 46.8472101688385,
+  "total_actual_points_current_gw": 70.0,
+  "total_predicted_points_planning_horizon": 330.3353171348572,
   "squad": [
     {
       "element": 495.0,
@@ -50,6 +36,19 @@
       "predicted_points_current_gw": 4.268954753875732,
       "actual_points_current_gw": 1.0,
       "predicted_points_planning_horizon": 21.656026363372803,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 255.0,
+      "name": "Antonee Robinson",
+      "position": "DEF",
+      "team": "Fulham",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.9767544269561768,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 15.905252933502197,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -68,19 +67,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 88.0,
-      "name": "Nathan Collins",
-      "position": "DEF",
-      "team": "Brentford",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.465664386749268,
-      "actual_points_current_gw": 10.0,
-      "predicted_points_planning_horizon": 15.090903282165527,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 311.0,
       "name": "Trent Alexander-Arnold",
       "position": "DEF",
@@ -94,14 +80,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 498.0,
-      "name": "Cristian Romero",
+      "element": 211.0,
+      "name": "Daniel Mu\u00f1oz",
       "position": "DEF",
-      "team": "Spurs",
+      "team": "Crystal Palace",
       "cost": 50.0,
-      "predicted_points_current_gw": 0.0,
+      "predicted_points_current_gw": 2.306447029113769,
       "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 13.886760950088501,
+      "predicted_points_planning_horizon": 13.54178786277771,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -141,19 +127,6 @@
       "predicted_points_current_gw": 3.156179904937744,
       "actual_points_current_gw": 8.0,
       "predicted_points_planning_horizon": 20.450052499771118,
-      "is_starting": 0.0,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 235.0,
-      "name": "Jordan Pickford",
-      "position": "GK",
-      "team": "Everton",
-      "cost": 50.0,
-      "predicted_points_current_gw": 2.6040303707122803,
-      "actual_points_current_gw": 15.0,
-      "predicted_points_planning_horizon": 20.45404577255249,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -167,6 +140,19 @@
       "predicted_points_current_gw": 2.593183755874634,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 17.39407706260681,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 293.0,
+      "name": "Mads Hermansen",
+      "position": "GK",
+      "team": "Leicester",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.3095524311065674,
+      "actual_points_current_gw": 6.0,
+      "predicted_points_planning_horizon": 16.95541548728943,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -195,7 +181,7 @@
       "predicted_points_planning_horizon": 37.67306852340698,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 99.0,
@@ -221,18 +207,18 @@
       "predicted_points_planning_horizon": 28.991076946258545,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
-      "element": 240.0,
-      "name": "Andreas Hoelgebaum Pereira",
+      "element": 136.0,
+      "name": "Mitoma Kaoru",
       "position": "MID",
-      "team": "Fulham",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.661400079727173,
-      "actual_points_current_gw": 8.0,
-      "predicted_points_planning_horizon": 21.63048481941223,
-      "is_starting": true,
+      "team": "Brighton",
+      "cost": 65.0,
+      "predicted_points_current_gw": 3.0819215774536133,
+      "actual_points_current_gw": 5.0,
+      "predicted_points_planning_horizon": 20.00131607055664,
+      "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     }
@@ -252,6 +238,19 @@
       "is_vice": 0.0
     },
     {
+      "element": 255.0,
+      "name": "Antonee Robinson",
+      "position": "DEF",
+      "team": "Fulham",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.9767544269561768,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 15.905252933502197,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
       "element": 350.0,
       "name": "Jo\u0161ko Gvardiol",
       "position": "DEF",
@@ -260,19 +259,6 @@
       "predicted_points_current_gw": 2.6180949211120605,
       "actual_points_current_gw": 1.0,
       "predicted_points_planning_horizon": 18.042121410369873,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 88.0,
-      "name": "Nathan Collins",
-      "position": "DEF",
-      "team": "Brentford",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.465664386749268,
-      "actual_points_current_gw": 10.0,
-      "predicted_points_planning_horizon": 15.090903282165527,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -304,14 +290,27 @@
       "is_vice": 0.0
     },
     {
-      "element": 235.0,
-      "name": "Jordan Pickford",
+      "element": 447.0,
+      "name": "Chris Wood",
+      "position": "FWD",
+      "team": "Nott'm Forest",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.156179904937744,
+      "actual_points_current_gw": 8.0,
+      "predicted_points_planning_horizon": 20.450052499771118,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 91.0,
+      "name": "Mark Flekken",
       "position": "GK",
-      "team": "Everton",
-      "cost": 50.0,
-      "predicted_points_current_gw": 2.6040303707122803,
-      "actual_points_current_gw": 15.0,
-      "predicted_points_planning_horizon": 20.45404577255249,
+      "team": "Brentford",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.593183755874634,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 17.39407706260681,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -340,7 +339,7 @@
       "predicted_points_planning_horizon": 37.67306852340698,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 99.0,
@@ -364,19 +363,6 @@
       "predicted_points_current_gw": 4.227031230926514,
       "actual_points_current_gw": 6.0,
       "predicted_points_planning_horizon": 28.991076946258545,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": true
-    },
-    {
-      "element": 240.0,
-      "name": "Andreas Hoelgebaum Pereira",
-      "position": "MID",
-      "team": "Fulham",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.661400079727173,
-      "actual_points_current_gw": 8.0,
-      "predicted_points_planning_horizon": 21.63048481941223,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0

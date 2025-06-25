@@ -2,30 +2,30 @@
   "GW": 4,
   "transfers_made": 1,
   "points_hit": 0,
-  "bank": 0,
+  "bank": 5,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
     {
-      "element": 88.0,
-      "name": "Nathan Collins",
-      "position": "DEF",
-      "team": "Brentford",
-      "cost": 45.0
+      "element": 136.0,
+      "name": "Mitoma Kaoru",
+      "position": "MID",
+      "team": "Brighton",
+      "cost": 65.0
     }
   ],
   "transfers_out": [
     {
-      "element": 211.0,
-      "name": "Daniel Mu\u00f1oz",
-      "position": "DEF",
-      "team": "Crystal Palace",
-      "cost": 50.0
+      "element": 78.0,
+      "name": "Antoine Semenyo",
+      "position": "MID",
+      "team": "Bournemouth",
+      "cost": 55.0
     }
   ],
-  "total_predicted_points_current_gw": 50.18428444862366,
-  "total_actual_points_current_gw": 23.0,
-  "total_predicted_points_planning_horizon": 323.72496724128723,
+  "total_predicted_points_current_gw": 51.556432247161865,
+  "total_actual_points_current_gw": 25.0,
+  "total_predicted_points_planning_horizon": 320.49034917354584,
   "squad": [
     {
       "element": 495.0,
@@ -67,27 +67,27 @@
       "is_vice": true
     },
     {
-      "element": 18.0,
-      "name": "William Saliba",
+      "element": 437.0,
+      "name": "Neco Williams",
       "position": "DEF",
-      "team": "Arsenal",
-      "cost": 60.0,
-      "predicted_points_current_gw": 2.9795081615448,
-      "actual_points_current_gw": 5.0,
-      "predicted_points_planning_horizon": 17.01145362854004,
+      "team": "Nott'm Forest",
+      "cost": 45.0,
+      "predicted_points_current_gw": 2.616550207138061,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 15.043620944023132,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 88.0,
-      "name": "Nathan Collins",
+      "element": 211.0,
+      "name": "Daniel Mu\u00f1oz",
       "position": "DEF",
-      "team": "Brentford",
-      "cost": 45.0,
-      "predicted_points_current_gw": 2.501304864883423,
-      "actual_points_current_gw": 0.0,
-      "predicted_points_planning_horizon": 15.514983654022217,
+      "team": "Crystal Palace",
+      "cost": 50.0,
+      "predicted_points_current_gw": 2.497710704803467,
+      "actual_points_current_gw": 1.0,
+      "predicted_points_planning_horizon": 14.397445917129517,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -119,14 +119,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 148.0,
-      "name": "Danny Welbeck",
+      "element": 110.0,
+      "name": "Yoane Wissa",
       "position": "FWD",
-      "team": "Brighton",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.165059328079224,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 21.47370743751526,
+      "team": "Brentford",
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.087237596511841,
+      "actual_points_current_gw": 7.0,
+      "predicted_points_planning_horizon": 17.455901861190796,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -171,6 +171,19 @@
       "is_vice": 0.0
     },
     {
+      "element": 136.0,
+      "name": "Mitoma Kaoru",
+      "position": "MID",
+      "team": "Brighton",
+      "cost": 65.0,
+      "predicted_points_current_gw": 4.658316612243652,
+      "actual_points_current_gw": 3.0,
+      "predicted_points_planning_horizon": 22.17286443710327,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
       "element": 182.0,
       "name": "Cole Palmer",
       "position": "MID",
@@ -192,19 +205,6 @@
       "predicted_points_current_gw": 3.936624050140381,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 23.28643274307251,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 78.0,
-      "name": "Antoine Semenyo",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.2861688137054443,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 18.304306507110596,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -316,6 +316,19 @@
       "is_vice": 0.0
     },
     {
+      "element": 136.0,
+      "name": "Mitoma Kaoru",
+      "position": "MID",
+      "team": "Brighton",
+      "cost": 65.0,
+      "predicted_points_current_gw": 4.658316612243652,
+      "actual_points_current_gw": 3.0,
+      "predicted_points_planning_horizon": 22.17286443710327,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
       "element": 182.0,
       "name": "Cole Palmer",
       "position": "MID",
@@ -337,19 +350,6 @@
       "predicted_points_current_gw": 3.936624050140381,
       "actual_points_current_gw": 2.0,
       "predicted_points_planning_horizon": 23.28643274307251,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
-      "element": 78.0,
-      "name": "Antoine Semenyo",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.2861688137054443,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 18.304306507110596,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0

@@ -2,15 +2,15 @@
   "GW": 31,
   "transfers_made": 3,
   "points_hit": 2,
-  "bank": 0,
+  "bank": 5,
   "free_transfers": 1,
   "chips_used": [],
   "transfers_in": [
     {
-      "element": 57.0,
-      "name": "Youri Tielemans",
-      "position": "MID",
-      "team": "Aston Villa",
+      "element": 15.0,
+      "name": "David Raya Martin",
+      "position": "GK",
+      "team": "Arsenal",
       "cost": 55.0
     },
     {
@@ -21,27 +21,27 @@
       "cost": 85.0
     },
     {
-      "element": 573.0,
-      "name": "Nikola Milenkovi\u0107",
-      "position": "DEF",
-      "team": "Nott'm Forest",
-      "cost": 45.0
+      "element": 585.0,
+      "name": "Isma\u00efla Sarr",
+      "position": "MID",
+      "team": "Crystal Palace",
+      "cost": 60.0
     }
   ],
   "transfers_out": [
     {
-      "element": 3.0,
-      "name": "Gabriel dos Santos Magalh\u00e3es",
-      "position": "DEF",
-      "team": "Arsenal",
-      "cost": 60.0
+      "element": 182.0,
+      "name": "Cole Palmer",
+      "position": "MID",
+      "team": "Chelsea",
+      "cost": 105.0
     },
     {
-      "element": 71.0,
-      "name": "Justin Kluivert",
-      "position": "MID",
-      "team": "Bournemouth",
-      "cost": 55.0
+      "element": 201.0,
+      "name": "Dean Henderson",
+      "position": "GK",
+      "team": "Crystal Palace",
+      "cost": 45.0
     },
     {
       "element": 447.0,
@@ -51,9 +51,9 @@
       "cost": 60.0
     }
   ],
-  "total_predicted_points_current_gw": 66.28763437271118,
-  "total_actual_points_current_gw": 56.0,
-  "total_predicted_points_planning_horizon": 380.77351689338684,
+  "total_predicted_points_current_gw": 65.15671801567078,
+  "total_actual_points_current_gw": 62.0,
+  "total_predicted_points_planning_horizon": 381.97849583625793,
   "squad": [
     {
       "element": 211.0,
@@ -82,14 +82,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 6.0,
-      "name": "Jurri\u00ebn Timber",
+      "element": 3.0,
+      "name": "Gabriel dos Santos Magalh\u00e3es",
       "position": "DEF",
       "team": "Arsenal",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.1150808334350586,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 20.243727207183838,
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.449915647506714,
+      "actual_points_current_gw": 0.0,
+      "predicted_points_planning_horizon": 17.641552925109863,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -108,14 +108,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 573.0,
-      "name": "Nikola Milenkovi\u0107",
+      "element": 311.0,
+      "name": "Trent Alexander-Arnold",
       "position": "DEF",
-      "team": "Nott'm Forest",
-      "cost": 45.0,
-      "predicted_points_current_gw": 3.013856887817383,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 17.971065998077393,
+      "team": "Liverpool",
+      "cost": 70.0,
+      "predicted_points_current_gw": 0.0,
+      "actual_points_current_gw": 0.0,
+      "predicted_points_planning_horizon": 16.639866590499878,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -144,7 +144,7 @@
       "predicted_points_planning_horizon": 26.21457862854004,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 110.0,
@@ -160,19 +160,6 @@
       "is_vice": 0.0
     },
     {
-      "element": 201.0,
-      "name": "Dean Henderson",
-      "position": "GK",
-      "team": "Crystal Palace",
-      "cost": 45.0,
-      "predicted_points_current_gw": 5.243412494659424,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 22.923425912857056,
-      "is_starting": true,
-      "is_captain": 0.0,
-      "is_vice": 0.0
-    },
-    {
       "element": 443.0,
       "name": "Matz Sels",
       "position": "GK",
@@ -181,19 +168,32 @@
       "predicted_points_current_gw": 3.40509033203125,
       "actual_points_current_gw": 3.0,
       "predicted_points_planning_horizon": 19.911725997924805,
+      "is_starting": true,
+      "is_captain": 0.0,
+      "is_vice": 0.0
+    },
+    {
+      "element": 15.0,
+      "name": "David Raya Martin",
+      "position": "GK",
+      "team": "Arsenal",
+      "cost": 55.0,
+      "predicted_points_current_gw": 3.284324407577514,
+      "actual_points_current_gw": 2.0,
+      "predicted_points_planning_horizon": 24.37485957145691,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 182.0,
-      "name": "Cole Palmer",
+      "element": 585.0,
+      "name": "Isma\u00efla Sarr",
       "position": "MID",
-      "team": "Chelsea",
-      "cost": 105.0,
-      "predicted_points_current_gw": 5.648077964782715,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 24.392739295959473,
+      "team": "Crystal Palace",
+      "cost": 60.0,
+      "predicted_points_current_gw": 6.020648956298828,
+      "actual_points_current_gw": 7.0,
+      "predicted_points_planning_horizon": 28.618835926055908,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -222,7 +222,7 @@
       "predicted_points_planning_horizon": 30.76195192337036,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 23.0,
@@ -238,14 +238,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 57.0,
-      "name": "Youri Tielemans",
+      "element": 54.0,
+      "name": "Morgan Rogers",
       "position": "MID",
       "team": "Aston Villa",
-      "cost": 55.0,
-      "predicted_points_current_gw": 2.841971635818481,
+      "cost": 50.0,
+      "predicted_points_current_gw": 2.8699846267700195,
       "actual_points_current_gw": 6.0,
-      "predicted_points_planning_horizon": 23.485898971557617,
+      "predicted_points_planning_horizon": 22.94672131538391,
       "is_starting": 0.0,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -279,14 +279,14 @@
       "is_vice": 0.0
     },
     {
-      "element": 6.0,
-      "name": "Jurri\u00ebn Timber",
+      "element": 3.0,
+      "name": "Gabriel dos Santos Magalh\u00e3es",
       "position": "DEF",
       "team": "Arsenal",
-      "cost": 55.0,
-      "predicted_points_current_gw": 3.1150808334350586,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 20.243727207183838,
+      "cost": 60.0,
+      "predicted_points_current_gw": 3.449915647506714,
+      "actual_points_current_gw": 0.0,
+      "predicted_points_planning_horizon": 17.641552925109863,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -315,7 +315,7 @@
       "predicted_points_planning_horizon": 26.21457862854004,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": 0.0
+      "is_vice": true
     },
     {
       "element": 110.0,
@@ -331,27 +331,27 @@
       "is_vice": 0.0
     },
     {
-      "element": 201.0,
-      "name": "Dean Henderson",
+      "element": 443.0,
+      "name": "Matz Sels",
       "position": "GK",
-      "team": "Crystal Palace",
+      "team": "Nott'm Forest",
       "cost": 45.0,
-      "predicted_points_current_gw": 5.243412494659424,
-      "actual_points_current_gw": 2.0,
-      "predicted_points_planning_horizon": 22.923425912857056,
+      "predicted_points_current_gw": 3.40509033203125,
+      "actual_points_current_gw": 3.0,
+      "predicted_points_planning_horizon": 19.911725997924805,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
     },
     {
-      "element": 182.0,
-      "name": "Cole Palmer",
+      "element": 585.0,
+      "name": "Isma\u00efla Sarr",
       "position": "MID",
-      "team": "Chelsea",
-      "cost": 105.0,
-      "predicted_points_current_gw": 5.648077964782715,
-      "actual_points_current_gw": 1.0,
-      "predicted_points_planning_horizon": 24.392739295959473,
+      "team": "Crystal Palace",
+      "cost": 60.0,
+      "predicted_points_current_gw": 6.020648956298828,
+      "actual_points_current_gw": 7.0,
+      "predicted_points_planning_horizon": 28.618835926055908,
       "is_starting": true,
       "is_captain": 0.0,
       "is_vice": 0.0
@@ -380,7 +380,7 @@
       "predicted_points_planning_horizon": 30.76195192337036,
       "is_starting": true,
       "is_captain": 0.0,
-      "is_vice": true
+      "is_vice": 0.0
     },
     {
       "element": 23.0,
